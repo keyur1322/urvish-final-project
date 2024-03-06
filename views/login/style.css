@@ -4,24 +4,12 @@
     display: flex;
 }
 
-.main-1{
-    width: 40%;
-    height: 640px;
-}
-
-.text{
-    margin-top: 3rem;
-}
-
 .email, .pwd{
     font-weight: bold;
 }
 
 .border{
     display: inline-block;
-    width: 350px;
-    height: 555px;
-    margin: 1rem;
     background-color: #f9f9f9;
   }
 
@@ -83,11 +71,6 @@
     background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-}
-
-.main-2{
-    width: 60%;
-    height: 600px;
 }
 
 .img{
