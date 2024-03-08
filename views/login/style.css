@@ -3,12 +3,11 @@ body{
   }
   
   .main-div{
-      margin-top: 6rem !important;
-    }
-  /* 
-  .col-md-4{
-    height: fit-content;
-  } */
+    margin-top: 8%;
+  }
+  .main-child-1, .main-child-2{
+    background-color: white;
+  }
   
   .separator {
     display: flex;
@@ -61,10 +60,15 @@ body{
   }
   
   
-  /* 
-  @media (max-width:766px) {
-    .box{
-      display: flex;
+  
+  @media (max-width:1199px) {
+    .login-card{
+      padding: 1.5rem !important;
+    }
+    .login-img{
+      max-width: 70% !important;
+    }
+    .main-div{
       flex-direction: column-reverse;
     }
-  } */
+  }
