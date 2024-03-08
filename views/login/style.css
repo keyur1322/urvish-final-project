@@ -1,5 +1,5 @@
 body{
-    background-color: #009C86;
+    background-color: #A952A3
   }
   
   .main-div{
@@ -13,6 +13,7 @@ body{
     display: flex;
     align-items: center;
     text-align: center;
+    color: grey;
   }
   
   .separator::before,
@@ -34,6 +35,14 @@ body{
   
   .btn-1{
     border: 0px;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: #A952A3;
+    color: white;
+  }
+
+  .click-1{
+    color: #A952A3;
   }
   
   .fa-google {
@@ -48,6 +57,10 @@ body{
   .btn{
     border-color: unset;
     color: tomato;
+  }
+
+  .btn-2{
+    color: darkblue;
   }
   
   
