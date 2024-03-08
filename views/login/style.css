@@ -1,0 +1,70 @@
+body{
+    background-color: #009C86;
+  }
+  
+  .main-div{
+      margin-top: 6rem !important;
+    }
+  /* 
+  .col-md-4{
+    height: fit-content;
+  } */
+  
+  .separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .separator::before,
+  .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #000;
+  }
+  
+  .separator:not(:empty)::before {
+    margin-right: .25em;
+  }
+  
+  .separator:not(:empty)::after {
+    margin-left: .25em;
+  }
+  
+  
+  
+  .btn-1{
+    border: 0px;
+  }
+  
+  .fa-google {
+    background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  
+  }
+  
+  .btn{
+    border-color: unset;
+    color: tomato;
+  }
+  
+  
+  .fa-facebook-square {
+    color: #3b5998;
+    background-image: linear-gradient( to bottom, transparent 20%, white 20%, white 93%, transparent 93% );
+    background-size: 55%;
+    background-position: 70% 0;
+    background-repeat: no-repeat;
+  }
+  
+  
+  /* 
+  @media (max-width:766px) {
+    .box{
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  } */

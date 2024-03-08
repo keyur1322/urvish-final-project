@@ -5,51 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
   <title>login page</title>
 </head>
-<style>
-  .main-div{
-    margin-top: 6rem !important;
-  }
-</style>
 <body>
   <div class="main-div row d-flex justify-content-center container-fluid">
-    <div class="col-md-4 d-flex justify-content-center flex-column">
-      <div class="card shadow p-5 mb-5 bg-body rounded">
+    <!-- <div class="row box"> -->
+      <div class="col-md-4 d-flex justify-content-center flex-column">
+       <div class="card shadow p-5 mb-5 bg-body rounded">
         <h3>Login</h3>
-        <p>Doesn't have an account? Signup</p>
+        <p>Doesn't have an account?  <a href="#">Signup</a></p>
         <form>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="you@example.com" aria-describedby="emailHelp">
             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
           </div>
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <label for="exampleInputPassword1" class="form-label">Password</label>  <a href="#">forget password?</a>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter 6 character or more">
           </div>
           <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Remember me</label>
           </div>
           <div class="d-grid">
-            <button class="btn btn-primary" type="button">Login</button>
+            <button class="btn-1 btn-primary" type="button">Login</button>
           </div>
         </form>
-        <hr>
+        <br>
+        <div class="separator">or login with</div>
+        <br>
         <div class="d-flex">
           <div class="col-6 pe-2">
-            <button class="btn btn-primary w-100" type="button">Button</button>
+            <button class="btn btn w-100"><i class="fab fa-google fa-1x"></i> Google </button>
           </div>
           <div class="col-6 pl-2">
-            <button class="btn btn-primary w-100" type="button">Button</button>
+            <button class=" btn btn w-100"><i class="fa fa-facebook-square"></i> Facebook </button>
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-4 d-flex justify-content-center flex-column">
+      </div>
+      <div class="col-md-6 d-flex justify-content-center flex-column">
       <img src="login.jpg" class="img-fluid" alt="not found">
-    </div>
+      </div>
+    <!-- </div> -->
   </div>
 </body>
 </html>
