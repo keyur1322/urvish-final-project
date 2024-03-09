@@ -1,0 +1,28 @@
+body{
+    background-color: #BFD8FF;
+}
+
+.main-div{
+    margin-top: 8%;
+}
+.main-child-1, .main-child-2{
+    background-color: white;
+}
+
+.btn-1{
+    background-color: #BFD8FF;
+    border: 0px;
+    padding: 0.5rem;
+}
+
+@media (max-width:1199px) {
+    .main-div{
+        margin-left: 0% !important;
+    }
+    .register-card{
+      padding: 1.5rem !important;
+    }
+    .register-img{
+      max-width: 70% !important;
+    }
+  }

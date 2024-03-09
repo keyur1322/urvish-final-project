@@ -1,5 +1,5 @@
 body{
-    background-color: #A952A3
+    background-color: #A952A3;
   }
   
   .main-div{
@@ -31,8 +31,6 @@ body{
     margin-left: .25em;
   }
   
-  
-  
   .btn-1{
     border: 0px;
     padding: 0.5rem;
@@ -51,7 +49,6 @@ body{
     background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-  
   }
   
   .btn{
@@ -63,7 +60,6 @@ body{
     color: darkblue;
   }
   
-  
   .fa-facebook-square {
     color: #3b5998;
     background-image: linear-gradient( to bottom, transparent 20%, white 20%, white 93%, transparent 93% );
@@ -71,8 +67,6 @@ body{
     background-position: 70% 0;
     background-repeat: no-repeat;
   }
-  
-  
   
   @media (max-width:1199px) {
     .login-card{
