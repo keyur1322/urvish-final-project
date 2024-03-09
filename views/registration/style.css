@@ -26,8 +26,8 @@ body{
   .btn{
     border-color: red;
     color: red;
+    margin-top: 1rem;
   }
-  
   
   
   .fa-facebook-square {
@@ -36,6 +36,12 @@ body{
     background-size: 55%;
     background-position: 70% 0;
     background-repeat: no-repeat;
+  }
+
+  .btn-2{
+    color: darkblue;
+    border-color: darkblue;
+    margin-top: 1rem;
   }
 
 @media (max-width:1199px) {
