@@ -15,17 +15,22 @@ else{
   // echo "connect";
 }
 
-if(isset($_POST['cust_reg_btn'])){
+if(isset($_POST['reg_btn'])){
     $cname = $_POST['customer_company_name'];
-    echo $cname;
+    $cfname = $_POST['customer_fname'];
+    $clname = $_POST['customer_lname'];
+    $cmobile = $_POST['customer_mobilenumber'];
+    $cemail = $_POST['customer_email'];
 
-    $sql = "INSERT INTO MyGuests (firstname, lastname, email)
-    VALUES ('John', 'Doe', 'john@example.com')";
+    $sql = "INSERT INTO tbl_customer (customer_company_name, customer_fname, customer_lname, customer_mobilenumber, customer_email)
+    VALUES ('$cname', '$cfname', '$clname', $cmobile, '$cemail')";
     
-    if ($conn->query($sql) === TRUE) {
-      echo "New record created successfully";
+    if ($con->query($sql) === TRUE) {
+      // echo "New record created successfully";
+      header("Location: index.html");
+
     } else {
-      echo "Error: " . $sql . "<br>" . $conn->error;
+      echo "Error: " . $sql . "<br>" . $con->error;
     }
 
 }else{
