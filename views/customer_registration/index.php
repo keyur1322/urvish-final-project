@@ -1,3 +1,10 @@
+<?php
+
+$cnameErr = $cfnameErr = $clnameErr = $cmobileErr = $cemailErr = '';
+include('connect.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +18,11 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
 </head>
+<style>
+  .error{
+    color: red;
+  }
+</style>
 <body>
 
 <div class="container mt-5">
@@ -22,31 +34,36 @@
         </div>
         <div class="card-body">
 
-          <form action="connect.php" method="post">
+          <form method="post">
 
             <div class="form-group">
               <label for="name">customer_company_name</label>
               <input type="text" class="form-control" id="name" placeholder="Enter your company name" name="customer_company_name">
+              <span class="error"><?php echo $cnameErr;?></span>
             </div>
 
             <div class="form-group">
               <label for="name">customer_fname</label>
               <input type="text" class="form-control" id="name" placeholder="Enter fname" name="customer_fname">
+              <span class="error"><?php echo $cfnameErr;?></span>
             </div>
 
             <div class="form-group">
               <label for="name">customer_lname</label>
               <input type="text" class="form-control" id="name" placeholder="Enter lname" name="customer_lname">
+              <span class="error"><?php echo $clnameErr;?></span>
             </div>
 
             <div class="form-group">
               <label for="number">customer_mobilenumber</label>
               <input type="text" class="form-control" id="number" placeholder="enter number" name="customer_mobilenumber">
+              <span class="error"><?php echo $cmobileErr;?></span>
             </div>
 
             <div class="form-group">
               <label for="email">customer_email</label>
-              <input type="email" class="form-control" id="email" placeholder="enter email" name="customer_email">
+              <input type="text" class="form-control" id="email" placeholder="enter email" name="customer_email">
+              <span class="error"><?php echo $cemailErr;?></span>
             </div>
 
             <button type="submit" class="btn btn-primary" name="reg_btn" value="reg_btn">Registration</button>
