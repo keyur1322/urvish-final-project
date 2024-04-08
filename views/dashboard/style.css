@@ -61,6 +61,12 @@ html, body{
 .my-nav-1 li a i{
   margin-right: 5% !important;
 }
+/* 
+.logout{
+  position: absolute; !important
+    bottom: 0; !important
+    width: 100%;
+} */
 
 /* .nav>li>a:hover {
   text-decoration: none;
