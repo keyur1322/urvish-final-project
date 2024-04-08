@@ -1,0 +1,60 @@
+html, body{
+  height: 100% !important;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content, .main-div {height: 100% !important}
+    
+/* Set gray background color and 100% height */
+
+.my-sidenav{
+  background: rgb(2,0,36);
+background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(7,51,148,1) 0%, rgba(7,55,151,1) 10%, rgba(4,118,193,1) 100%, rgba(3,149,214,1) 100%, rgba(2,162,222,1) 100%, rgba(0,212,255,1) 100%);
+}
+
+.sidenav {
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+.nav-title{
+  color: white;
+}
+
+.logo-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15%;
+  margin-bottom: 15%;
+}
+
+.logo-txt{
+  font-size: 2rem;
+  margin: 0;
+  margin-left: 5% !important;
+  font-weight: bold;
+  color: white;
+}
+
+.my-nav li a{
+  padding-left: 0% !important;
+  font-size: 2rem;
+  color: white;
+}
+
+.my-nav li a i{
+  margin-right: 5% !important;
+}
+
+/* .icon{
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+     */
+/* On small screens, set height to 'auto' for the grid */
+@media screen and (max-width: 767px) {
+  .row.content {height: auto;} 
+}
