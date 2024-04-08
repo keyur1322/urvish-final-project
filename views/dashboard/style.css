@@ -9,7 +9,12 @@ html, body{
 
 .my-sidenav{
   background: rgb(2,0,36);
-background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(7,51,148,1) 0%, rgba(7,55,151,1) 10%, rgba(4,118,193,1) 100%, rgba(3,149,214,1) 100%, rgba(2,162,222,1) 100%, rgba(0,212,255,1) 100%);
+  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(7,51,148,1) 0%, rgba(7,55,151,1) 10%, rgba(4,118,193,1) 100%, rgba(3,149,214,1) 100%, rgba(2,162,222,1) 100%, rgba(0,212,255,1) 100%);
+}
+
+.my-sidenav-1{
+  background: rgb(2,0,36);
+  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(7,51,148,1) 0%, rgba(7,55,151,1) 10%, rgba(4,118,193,1) 100%, rgba(3,149,214,1) 100%, rgba(2,162,222,1) 100%, rgba(0,212,255,1) 100%);
 }
 
 .sidenav {
@@ -47,12 +52,24 @@ background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(7,
   margin-right: 5% !important;
 }
 
-/* .icon{
-  padding: 12px;
+.my-nav-1 li a{
+  padding-left: 0% !important;
+  font-size: 2rem;
   color: white;
-  text-decoration: none;
-  font-size: 17px;
 }
+
+.my-nav-1 li a i{
+  margin-right: 5% !important;
+}
+
+/* .nav>li>a:hover {
+  text-decoration: none;
+  background-color: ;
+} */
+ 
+
+
+
      */
 /* On small screens, set height to 'auto' for the grid */
 @media screen and (max-width: 767px) {
