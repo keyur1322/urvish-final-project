@@ -18,7 +18,7 @@ include 'connect.php';
     <div class="container">
         <button class="btn btn-primary my-5"><a href="http://localhost/final/urvish-final-project/views/customer_registration/" class="text-light">Add user</a>
         </button>
-        <table class="table">
+        <table class="table table-bordered">
             <thead>
               <tr>
                 <th scope="col">customer_id</th>
