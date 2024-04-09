@@ -47,6 +47,9 @@ html, body{
   font-size: 2rem;
   color: white;
 }
+.my-nav>li>a:hover, .my-nav>li>a:focus {
+  background-color: transparent !important;
+}
 
 .my-nav li a i{
   margin-right: 5% !important;
@@ -61,22 +64,16 @@ html, body{
 .my-nav-1 li a i{
   margin-right: 5% !important;
 }
-/* 
-.logout{
-  position: absolute; !important
-    bottom: 0; !important
-    width: 100%;
-} */
 
-/* .nav>li>a:hover {
-  text-decoration: none;
-  background-color: ;
-} */
+.logout{
+  position: absolute !important;
+  bottom: 0 !important;
+  width: 100%;
+}
+
+
  
 
-
-
-     */
 /* On small screens, set height to 'auto' for the grid */
 @media screen and (max-width: 767px) {
   .row.content {height: auto;} 

@@ -1,6 +1,6 @@
-<!-- <?php
-include 'connect.php';
-?> -->
+<?php
+  include '../customer_registration/connect.php';
+?>
 
 
 <!DOCTYPE html>
@@ -16,12 +16,11 @@ include 'connect.php';
 </head>
 <body>
     <div class="container">
-        <button class="btn btn-primary my-5"><a href="http://localhost/final/urvish-final-project/views/customer_registration/" class="text-light">Add user</a>
+        <button class="btn btn-primary my-5"><a href="../customer_registration/index.php" class="text-light">Add user</a>
         </button>
         <table class="table table-bordered">
             <thead>
               <tr>
-                <th scope="col">customer_id</th>
                 <th scope="col">customer_conpany_name</th>
                 <th scope="col">customer_fname</th>
                 <th scope="col">customer_lname</th>
@@ -30,34 +29,32 @@ include 'connect.php';
               </tr>
             </thead>
             <tbody>
+            
+              <?php
+                $customer_get_query="select * from tbl_customer";
+                $result=$con->query($customer_get_query);
+          
+                if($result->num_rows > 0){
+                  while($row = $result->fetch_assoc()) {
+                  ?>
+                    <tr>
+                      <td><?php echo $row['customer_company_name']; ?></td>
+                      <td><?php echo $row['customer_fname']; ?></td>
+                      <td><?php echo $row['customer_lname']; ?></td>
+                      <td><?php echo $row['customer_mobilenumber']; ?></td>
+                      <td><?php echo $row['customer_email']; ?></td>
+                    </tr>
 
-              <!-- <?php
-              $sql="select * from 'tbl_customer'";
-              $result=mysqli_query($con,$sql);
-              if($result){
-                $row=mysqli_fetch_assoc($result);
-              }
-
-
-              ?> -->
-
-              <!-- <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr> -->
+                  <?php
+                  }
+                }else{
+                  ?>
+                  <tr>
+                    <td>Customer not found.</td>
+                  </tr>
+                  <?php
+                }
+              ?>
             </tbody>
           </table>
     </div>
