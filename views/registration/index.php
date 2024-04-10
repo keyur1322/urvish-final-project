@@ -30,37 +30,42 @@ include('admin.php');
             <div class="register-card card shadow p-5 bg-body rounded w-100 mt-3 mb-3">
                 <h2 class="fw-bold">Registration</h2>
                 <p>Already registered with us? <a class="click-2" href="../login/login.html">Login</a></p>
-            <form>
+            <form method="post">
                 <div class="mb-3">
                     <div class="row">
                         <div class="col">
+
                          <label>First Name</label>
                          <input type="text" class="form-control" placeholder="First Name" name="fname">
                         </div>
+
                         <div class="col">
                          <label>Last Name</label>
                          <input type="text" class="form-control" placeholder="Last Name" name="lname">
                         </div>
+
                     </div>
                 </div>
+
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email address" aria-describedby="emailHelp">
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email address" name="email"   aria-describedby="emailHelp">
                 </div>
+
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password">
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password" name="confirm_password">
                 </div>
 
                 <label for="DOB" class="form-label">Date of Birth</label>
-                <input id="startDate" class="form-control" type="date" /><br>
+                <input id="startDate" class="form-control" name="dob" type="date" /><br>
 
                 <div class="d-grid">
-                    <button class="btn-1" type="button"><a href="../dashboard/dashbord.html">Registration</a></button>
+                    <button class="btn-1" type="button" name="registration"><a href="../dashboard/dashbord.html">Registration</a></button>
                 </div>
 
                 <div class="d-flex">
