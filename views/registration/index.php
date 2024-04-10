@@ -1,3 +1,7 @@
+<?php
+include('admin.php');
+?>
+
 <!DOCTYPE html>
 <html>
 <head>

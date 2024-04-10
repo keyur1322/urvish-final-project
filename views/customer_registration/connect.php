@@ -22,6 +22,7 @@ if(isset($_POST['reg_btn'])){
     $cmobile = $_POST['customer_mobilenumber'];
     $cemail = $_POST['customer_email'];
 
+
     // company name validation
     if (empty($cname)) {
       $cnameErr = "Please enter company name";
