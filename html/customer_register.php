@@ -1,7 +1,7 @@
 <?php
 
 $cnameErr = $cfnameErr = $clnameErr = $cmobileErr = $cemailErr = '';
-include('connect.php');
+include('../php/connect.php');
 
 ?>
 

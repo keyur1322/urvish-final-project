@@ -1,22 +1,20 @@
 <?php
-  include '../customer_registration/connect.php';
+  include '../php/connect.php';
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>table</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Customer list</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </head>
 <body>
     <div class="container">
-        <button class="btn btn-primary my-5"><a href="../customer_registration/index.php" class="text-light">Add user</a>
+        <button class="btn btn-primary my-5"><a href="customer_register.php" class="text-light">Add user</a>
         </button>
         <table class="table table-bordered">
             <thead>
@@ -45,7 +43,7 @@
                       <td><?php echo $row['customer_email']; ?></td>
                       <td>
                         <!-- <button class="btn btn-primary"><a href="update.php" class="text-light">Update</a></button> -->
-                        <button class="btn btn-danger"><a href="delete.php?deleteid='.$row['customer_id']" class="text-light">Delete</a></button>
+                        <button class="btn btn-danger"><a href="delete.php?deleteid=<?php echo $row['customer_id']; ?>" class="text-light">Delete</a></button>
                       </td>
                     </tr>
 

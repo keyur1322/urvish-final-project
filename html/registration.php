@@ -1,5 +1,5 @@
 <?php
-include('admin.php');
+include('../php/admin.php');
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +16,7 @@ include('admin.php');
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://unpkg.com/gijgo@1.9.14/js/gijgo.min.js" type="text/javascript"></script>
     <link href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-    <link rel='stylesheet' href='style.css'>
+    <link rel='stylesheet' href='../css/registration.css'>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
@@ -24,12 +24,12 @@ include('admin.php');
 <body>
     <div class="main-div container-fluid row d-flex justify-content-center">
         <div class="col-xl-4 main-child-1 d-flex justify-content-center align-items-center flex-column ps-0 pe-0">
-            <img src="registration.jpg" class="register-img img-fluid w-100" alt="image not found">
+            <img src="../images/registration.jpg" class="register-img img-fluid w-100" alt="image not found">
         </div>
         <div class="col-xl-4 main-child-2 d-flex justify-content-center align-items-center flex-column pe-3 ps-3">
             <div class="register-card card shadow p-5 bg-body rounded w-100 mt-3 mb-3">
                 <h2 class="fw-bold">Registration</h2>
-                <p>Already registered with us? <a class="click-2" href="../login/login.html">Login</a></p>
+                <p>Already registered with us? <a class="click-2" href="index.html">Login</a></p>
             <form method="post">
                 <div class="mb-3">
                     <div class="row">
@@ -65,7 +65,7 @@ include('admin.php');
                 <input id="startDate" class="form-control" name="dob" type="date" /><br>
 
                 <div class="d-grid">
-                    <button class="btn-1" type="button" name="registration"><a href="../dashboard/dashbord.html">Registration</a></button>
+                    <button class="btn-1" type="button" name="registration"><a href="dashboard.html">Registration</a></button>
                 </div>
 
                 <div class="d-flex">
