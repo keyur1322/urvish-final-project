@@ -1,5 +1,5 @@
 <?php
-  include '../php/connect.php';
+  include '../php/connection.php';
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +31,7 @@
         <li><a href="dashboard.html"><i class="fa-solid fa-gauge"></i>Dashboard</a></li>
         <li><a href="#"><i class="fa-solid fa-gauge"></i>Classifier</a></li>
         <li><a href="customer_list.php"><i class="fa-solid fa-users"></i>Customers</a></li>
-        <li><a href="dashboard_Invoices.html"><i class="fa-solid fa-receipt"></i>Invoices</a></li>
+        <li><a href="invoices.php"><i class="fa-solid fa-receipt"></i>Invoices</a></li>
         <li><a href="#"><i class="fa-solid fa-hourglass-half"></i>Pending Expenses</a></li>
         <li><a href="#"><i class="fa-sharp fa-solid fa-square-check"></i>Expenses Overview</a></li>
         <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>logout</a></li>
@@ -56,7 +56,7 @@
         <li><a href="dashboard.html"><i class="fa-solid fa-gauge"></i>Dashboard</a></li>
         <li><a href="#"><i class="fa-solid fa-gauge"></i>Classifier</a></li>
         <li><a href="customer_list.php"><i class="fa-solid fa-users"></i>Customers</a></li>
-        <li><a href="dashboard_Invoices.html"><i class="fa-solid fa-receipt"></i>Invoices</a></li>
+        <li><a href="invoices.php"><i class="fa-solid fa-receipt"></i>Invoices</a></li>
         <li><a href="#"><i class="fa-solid fa-hourglass-half"></i>Pending Expenses</a></li>
         <li><a href="#"><i class="fa-sharp fa-solid fa-square-check"></i>Expenses Overview</a></li>
         <li class="logout"><a href="#"><i class="fa-solid fa-right-from-bracket"></i>logout</a></li>
@@ -71,49 +71,51 @@
       </div>
         <div class="container">
           <button class="btn"><a href="customer_register.php" class="text-light">Add user</a></button>
-          <table class="table table-bordered mt-5">
-            <thead>
-              <tr>
-                <th scope="col">customer_conpany_name</th>
-                <th scope="col">customer_fname</th>
-                <th scope="col">customer_lname</th>
-                <th scope="col">customer_mobileno</th>
-                <th scope="col">customer_email</th>
-              </tr>
-            </thead>
-            <tbody>
-            
-              <?php
-                $customer_get_query="select * from tbl_customer";
-                $result=$con->query($customer_get_query);
-          
-                if($result->num_rows > 0){
-                  while($row = $result->fetch_assoc()) {
-                  ?>
-                    <tr>
-                      <td><?php echo $row['customer_company_name']; ?></td>
-                      <td><?php echo $row['customer_fname']; ?></td>
-                      <td><?php echo $row['customer_lname']; ?></td>
-                      <td><?php echo $row['customer_mobilenumber']; ?></td>
-                      <td><?php echo $row['customer_email']; ?></td>
-                      <td>
-                        <button class="btn btn-success"><a href="update.php" class="text-light">Update</a></button>
-                        <button class="btn btn-danger"><a href="../php/delete.php?deleteid=<?php echo $row['customer_id']; ?>" class="text-light">Delete</a></button>
-                      </td>
-                    </tr>
-
-                  <?php
-                  }
-                }else{
-                  ?>
+            <div class="table-responsive">
+              <table class="table table-bordered mt-5">
+                <thead>
                   <tr>
-                    <td>Customer not found.</td>
+                    <th scope="col">Company name</th>
+                    <th scope="col">Customer first name</th>
+                    <th scope="col">Customer last name</th>
+                    <th scope="col">Customer mobile no</th>
+                    <th scope="col">Customer email</th>
                   </tr>
+                </thead>
+                <tbody>
+                
                   <?php
-                }
-              ?>
-            </tbody>
-          </table>
+                    $customer_get_query="select * from tbl_customer";
+                    $result=$con->query($customer_get_query);
+              
+                    if($result->num_rows > 0){
+                      while($row = $result->fetch_assoc()) {
+                      ?>
+                        <tr>
+                          <td><?php echo $row['customer_company_name']; ?></td>
+                          <td><?php echo $row['customer_fname']; ?></td>
+                          <td><?php echo $row['customer_lname']; ?></td>
+                          <td><?php echo $row['customer_mobilenumber']; ?></td>
+                          <td><?php echo $row['customer_email']; ?></td>
+                          <td>
+                            <button class="btn btn-success"><a href="update.php" class="text-light">Update</a></button>
+                            <button class="btn btn-danger"><a href="../php/customer_delete.php?deleteid=<?php echo $row['customer_id']; ?>" class="text-light">Delete</a></button>
+                          </td>
+                        </tr>
+
+                      <?php
+                      }
+                    }else{
+                      ?>
+                      <tr>
+                        <td>Customer not found.</td>
+                      </tr>
+                      <?php
+                    }
+                  ?>
+                </tbody>
+              </table>
+            </div>
         </div>
     </div>
   </div>

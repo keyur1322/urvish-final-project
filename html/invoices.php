@@ -1,3 +1,9 @@
+<?php
+
+include('../php/connection.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,13 +15,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<!-- 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
-</body>
- 
 </head>
+<style>
+  .dropdown-div{
+    display: flex;
+    flex-direction: row;
+  }
+</style>
 <body>
 <!-- start mobile view navbar -->
 <nav class="navbar navbar-inverse visible-xs">
@@ -33,7 +39,7 @@
         <li><a href="dashboard.html"><i class="fa-solid fa-gauge"></i>Dashboard</a></li>
         <li><a href="#"><i class="fa-solid fa-gauge"></i>Classifier</a></li>
         <li><a href="customer_list.php"><i class="fa-solid fa-users"></i>Customers</a></li>
-        <li><a href="dashboard_Invoices.html"><i class="fa-solid fa-receipt"></i>Invoices</a></li>
+        <li><a href="invoices.php"><i class="fa-solid fa-receipt"></i>Invoices</a></li>
         <li><a href="#"><i class="fa-solid fa-hourglass-half"></i>Pending Expenses</a></li>
         <li><a href="#"><i class="fa-sharp fa-solid fa-square-check"></i>Expenses Overview</a></li>
         <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>logout</a></li>
@@ -58,7 +64,7 @@
         <li><a href="dashboard.html"><i class="fa-solid fa-gauge"></i>Dashboard</a></li>
         <li><a href="#"><i class="fa-solid fa-gauge"></i>Classifier</a></li>
         <li><a href="customer_list.php"><i class="fa-solid fa-users"></i>Customers</a></li>
-        <li><a href="dashboard_Invoices.html"><i class="fa-solid fa-receipt"></i>Invoices</a></li>
+        <li><a href="invoices.php"><i class="fa-solid fa-receipt"></i>Invoices</a></li>
         <li><a href="#"><i class="fa-solid fa-hourglass-half"></i>Pending Expenses</a></li>
         <li><a href="#"><i class="fa-sharp fa-solid fa-square-check"></i>Expenses Overview</a></li>
         <li class="logout"><a href="#"><i class="fa-solid fa-right-from-bracket"></i>logout</a></li>
@@ -73,25 +79,29 @@
       </div>
     </div>
 
-    <div class="col-sm-10">
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">item1</a>
-          <a class="dropdown-item" href="#">item2</a>
-          <a class="dropdown-item" href="#">item3</a>
-        </div>
+    <?php
+    
+      $get_all_company_name = 'SELECT * FROM tbl_customer';
+      $get_all_company_name_result = $con->query($get_all_company_name);
 
-        <button class="btn btn-secondary" type="button" id="Button" aria-haspopup="true" aria-expanded="false">
-          Show
-        </button>
+    ?>
 
-      </div>
+    <div class="col-sm-10 dropdown-div">
+      <select class="form-select">
+        <?php
+          if($get_all_company_name_result->num_rows > 0){
+            while($data = $get_all_company_name_result->fetch_assoc()) {
+              ?>
+                <option><?php echo $data['customer_company_name']; ?></option>
+              <?php
+            }
+          }
+        ?>
+      </select>  
+      <button class="btn btn-secondary" type="button" id="Button" aria-haspopup="true" aria-expanded="false">
+        Show
+      </button>
     </div>
-      
-
   </div>
 </div>
 

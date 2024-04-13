@@ -1,5 +1,5 @@
 <?php
-include('../php/admin.php');
+include('../php/admin_register.php');
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +65,7 @@ include('../php/admin.php');
                 <input id="startDate" class="form-control" name="dob" type="date" /><br>
 
                 <div class="d-grid">
-                    <button class="btn-1" type="button" name="registration"><a href="dashboard.html">Registration</a></button>
+                    <button class="btn-1" type="submit" name="admin_reg_btn" value="admin_reg_btn">Registration</button>
                 </div>
 
                 <div class="d-flex">

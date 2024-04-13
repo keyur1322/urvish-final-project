@@ -1,21 +1,7 @@
 <?php
 
-$server = "localhost";
-$username = "root";
-$password = "";
-$dbname = "db_expenses";
-
-$con = mysqli_connect($server, $username, $password, $dbname);
-
-if(!$con)
+if(isset($_POST['reg_btn']))
 {
-  echo "not connected";
-}
-else{
-  // echo "connect";
-}
-
-if(isset($_POST['reg_btn'])){
     $cname = $_POST['customer_company_name'];
     $cfname = $_POST['customer_fname'];
     $clname = $_POST['customer_lname'];
@@ -94,8 +80,5 @@ if(isset($_POST['reg_btn'])){
       }
     }
 }
-
-
-
 
 ?>

@@ -1,7 +1,8 @@
 <?php
 
 $cnameErr = $cfnameErr = $clnameErr = $cmobileErr = $cemailErr = '';
-include('../php/connect.php');
+include('../php/connection.php');
+include('../php/customer_query.php');
 
 ?>
 
