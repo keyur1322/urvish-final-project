@@ -1,5 +1,9 @@
 <?php
+
+$rfnameErr =$rlnameErr = $remailErrr = $rpasswordErr = $rdateErr = '';
+include('../php/connection.php');
 include('../php/admin_register.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -36,12 +40,14 @@ include('../php/admin_register.php');
                         <div class="col">
 
                          <label>First Name</label>
-                         <input type="text" class="form-control" placeholder="First Name" name="fname">
+                         <input type="text" class="form-control" placeholder="First Name" name="first_name">
+                         <span class="error"><?php echo $rfnameErr;?></span>
                         </div>
 
                         <div class="col">
                          <label>Last Name</label>
-                         <input type="text" class="form-control" placeholder="Last Name" name="lname">
+                         <input type="text" class="form-control" placeholder="Last Name" name="last_name">
+                         <span class="error"><?php echo $rlnameErr;?></span>
                         </div>
 
                     </div>
@@ -50,12 +56,15 @@ include('../php/admin_register.php');
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
                     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email address" name="email"   aria-describedby="emailHelp">
+                    <span class="error"><?php echo $remailErr;?></span>
                 </div>
 
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+                    <span class="error"><?php echo $rpasswordErr;?></span>
                 </div>
+
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password" name="confirm_password">
@@ -63,6 +72,7 @@ include('../php/admin_register.php');
 
                 <label for="DOB" class="form-label">Date of Birth</label>
                 <input id="startDate" class="form-control" name="dob" type="date" /><br>
+                <span class="error"><?php echo $rdateErr;?></span>
 
                 <div class="d-grid">
                     <button class="btn-1" type="submit" name="admin_reg_btn" value="admin_reg_btn">Registration</button>

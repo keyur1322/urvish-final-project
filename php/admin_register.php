@@ -1,27 +1,99 @@
 <?php
 
-if(isset($_POST['admin_reg_btn'])){
+if(isset($_POST['admin_reg_btn']))
+{
  
 
-  echo "coming";
+  // echo "coming";
 
-  // $afname = $_POST['fname'];
-  // $alname = $_POST['lname'];
-  // $aemail = $_POST['email'];
-  // $apassword = $_POST['password'];
+  $afname = $_POST['first_name'];
+  $alname = $_POST['last_name'];
+  $aemail = $_POST['email'];
+  $apassword = $_POST['password'];
   // $acpassword = $_POST['confirm_password'];
-  // $adob = $_POST['dob'];
+  $adob = $_POST['dob'];
 
 
-  // $sql = "INSERT INTO tbl_register (fname, lname, email, password, confirm_password, dob)
-  // VALUES ('$afname', '$alname', '$aemail', $apassword, '$acpassword', '$adob')";
+  // first name validation
+  if (empty($rfname)) {
+    $rfnameErr = "Please enter first name";
+  }
+  else
+  {
+    $rfnameErr = "";
+  }
 
-  //   if ($con->query($sql) === TRUE) {
-  //     echo "New record created successfully";
-  //       // header("Location: index.html");
-  //   } else {
-  //     echo "Error: " . $sql . "<br>" . $con->error;
-  //   }   
+
+  // last name validation
+  if (empty($rlname)) {
+    $rlnameErr = "Please enter last name";
+  }
+  else
+  {
+    $rlnameErr = "";
+  }
+
+
+  // email validation
+  if (empty($remail)) {
+    $remailErr = "Please enter email";
+  }
+  else
+  {
+    $remail = trim($remail);
+    $remail = stripslashes($remail);
+
+      // check if e-mail address is well-formed
+      if (!filter_var($remail, FILTER_VALIDATE_EMAIL)) {
+        $remailErr = "Please enter valid email address";
+      }else{
+        $remailErr = "";
+      }
+  }
+
+
+  // password validation
+  if (empty($rpassword)) {
+    $rpasswordErr = "Please enter password";
+  }
+  else
+  {
+    $rpasswordErr = "";
+  }
+
+
+  //  confirm password validation
+  if (empty($rpassword)) {
+    $rpasswordErr = "Please enter password";
+  }
+  else
+  {
+    $rpasswordErr = "";
+  }
+
+
+   //  dob validation
+   if (empty($rdate)) {
+    $rdateErr = "Please enter date of birth";
+  }
+  else
+  {
+    $rdateErr = "";
+  }
+
+
+
+  if($rfnameErr == '' & $rlnameErr == '' & $remailErr == '' & $rpasswordErr == '' & $rdateErr == ''){
+    $sql = "INSERT INTO tbl_register (first_name, last_name, email, password, dob)
+    VALUES ('$afname', '$alname', '$aemail', $apassword, '$adob')";
+
+      if ($con->query($sql) === TRUE) {
+        echo "New record created successfully";
+         // header("Location: index.html");
+       } else {
+        echo "Error: " . $sql . "<br>" . $con->error;
+    }  
+  } 
 }
 
 ?>
