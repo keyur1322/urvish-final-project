@@ -1,6 +1,6 @@
 <?php
 
-$rfnameErr =$rlnameErr = $remailErrr = $rpasswordErr = $rdateErr = '';
+$rfnameErr =$rlnameErr = $remailErr = $rpasswordErr = $rcpasswordErr = $rdateErr = '';
 include('../php/connection.php');
 include('../php/admin_register.php');
 
@@ -25,6 +25,11 @@ include('../php/admin_register.php');
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 </head>
+<style>
+    .error{
+        color: red;
+    }
+</style>
 <body>
     <div class="main-div container-fluid row d-flex justify-content-center">
         <div class="col-xl-4 main-child-1 d-flex justify-content-center align-items-center flex-column ps-0 pe-0">
@@ -55,7 +60,7 @@ include('../php/admin_register.php');
 
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email address" name="email"   aria-describedby="emailHelp">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email address" name="email">
                     <span class="error"><?php echo $remailErr;?></span>
                 </div>
 
@@ -68,11 +73,13 @@ include('../php/admin_register.php');
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password" name="confirm_password">
+                    <span class="error"><?php echo $rcpasswordErr;?></span>
                 </div>
 
                 <label for="DOB" class="form-label">Date of Birth</label>
-                <input id="startDate" class="form-control" name="dob" type="date" /><br>
+                <input id="startDate" class="form-control" name="dob" type="date" />
                 <span class="error"><?php echo $rdateErr;?></span>
+                <br>
 
                 <div class="d-grid">
                     <button class="btn-1" type="submit" name="admin_reg_btn" value="admin_reg_btn">Registration</button>

@@ -2,20 +2,15 @@
 
 if(isset($_POST['admin_reg_btn']))
 {
- 
-
-  // echo "coming";
-
   $afname = $_POST['first_name'];
   $alname = $_POST['last_name'];
   $aemail = $_POST['email'];
   $apassword = $_POST['password'];
-  // $acpassword = $_POST['confirm_password'];
+  $acpassword = $_POST['confirm_password'];
   $adob = $_POST['dob'];
 
-
   // first name validation
-  if (empty($rfname)) {
+  if (empty($afname)) {
     $rfnameErr = "Please enter first name";
   }
   else
@@ -23,9 +18,8 @@ if(isset($_POST['admin_reg_btn']))
     $rfnameErr = "";
   }
 
-
   // last name validation
-  if (empty($rlname)) {
+  if (empty($alname)) {
     $rlnameErr = "Please enter last name";
   }
   else
@@ -33,47 +27,47 @@ if(isset($_POST['admin_reg_btn']))
     $rlnameErr = "";
   }
 
-
   // email validation
-  if (empty($remail)) {
+  if (empty($aemail)) {
     $remailErr = "Please enter email";
   }
   else
   {
-    $remail = trim($remail);
-    $remail = stripslashes($remail);
+    $aemail = trim($aemail);
+    $aemail = stripslashes($aemail);
 
       // check if e-mail address is well-formed
-      if (!filter_var($remail, FILTER_VALIDATE_EMAIL)) {
+      if (!filter_var($aemail, FILTER_VALIDATE_EMAIL)) {
         $remailErr = "Please enter valid email address";
       }else{
         $remailErr = "";
       }
   }
 
-
   // password validation
-  if (empty($rpassword)) {
+  if (empty($apassword)) {
     $rpasswordErr = "Please enter password";
   }
   else
   {
     $rpasswordErr = "";
   }
-
 
   //  confirm password validation
-  if (empty($rpassword)) {
-    $rpasswordErr = "Please enter password";
+  if (empty($acpassword)) {
+    $rcpasswordErr = "Please enter confirm password";
   }
   else
   {
-    $rpasswordErr = "";
+    if($apassword == $acpassword){
+      $rcpasswordErr = "";
+    }else{
+      $rcpasswordErr = "Password does not match please enter again";
+    }
   }
 
-
-   //  dob validation
-   if (empty($rdate)) {
+  //  dob validation
+  if (empty($adob)) {
     $rdateErr = "Please enter date of birth";
   }
   else
@@ -81,19 +75,18 @@ if(isset($_POST['admin_reg_btn']))
     $rdateErr = "";
   }
 
+  if($rfnameErr == '' & $rlnameErr == '' & $remailErr == '' & $rpasswordErr == '' & $rcpasswordErr == '' & $rdateErr == ''){
+    
+    $admin_register_query = "INSERT INTO tbl_register (firstname, lastname, email, password, date_of_birth)
+    VALUES ('$afname', '$alname', '$aemail', '$apassword', '$adob')";
 
-
-  if($rfnameErr == '' & $rlnameErr == '' & $remailErr == '' & $rpasswordErr == '' & $rdateErr == ''){
-    $sql = "INSERT INTO tbl_register (first_name, last_name, email, password, dob)
-    VALUES ('$afname', '$alname', '$aemail', $apassword, '$adob')";
-
-      if ($con->query($sql) === TRUE) {
-        echo "New record created successfully";
-         // header("Location: index.html");
+      if ($con->query($admin_register_query) === TRUE) {
+        // echo "New record created successfully";
+        header("Location: ../html/index.html");
        } else {
-        echo "Error: " . $sql . "<br>" . $con->error;
-    }  
-  } 
+        echo "Error: " . $admin_register_query . "<br>" . $con->error;
+    }
+  }
 }
 
 ?>
