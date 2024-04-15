@@ -21,6 +21,13 @@ include('../php/connection.php');
     display: flex;
     flex-direction: row;
   }
+  table, th, td {
+    border: 1px solid;
+  }
+  th, td{
+    padding: 5px;
+  }
+
 </style>
 <body>
 <!-- start mobile view navbar -->
@@ -87,21 +94,92 @@ include('../php/connection.php');
     ?>
 
     <div class="col-sm-10 dropdown-div">
-      <select class="form-select">
-        <?php
-          if($get_all_company_name_result->num_rows > 0){
-            while($data = $get_all_company_name_result->fetch_assoc()) {
-              ?>
-                <option><?php echo $data['customer_company_name']; ?></option>
-              <?php
+      <form method="POST">
+        <select class="form-select" name="customers">
+          <option value = "" selected>Select option</option>
+          <?php
+            if($get_all_company_name_result->num_rows > 0){
+              while($data = $get_all_company_name_result->fetch_assoc()) {
+                ?>
+                  <option value="<?php echo $data['customer_id']; ?>"><?php echo $data['customer_company_name']; ?></option>
+                <?php
+              }
             }
-          }
-        ?>
-      </select>  
-      <button class="btn btn-secondary" type="button" id="Button" aria-haspopup="true" aria-expanded="false">
-        Show
-      </button>
+          ?>
+        </select>
+        <button class="btn btn-secondary" type="submit" name="get_invoices_btn">Get Invoices</button>
+      </form>
     </div>
+      <?php  
+        if(isset($_POST['get_invoices_btn'])){  
+          if(!empty($_POST['customers'])){
+            $selected_customer_id = $_POST['customers'];
+
+            $get_invoices = "SELECT * FROM tbl_invoices
+            LEFT JOIN tbl_customer
+            ON tbl_invoices.customer_id = tbl_customer.customer_id 
+            WHERE tbl_invoices.customer_id = '$selected_customer_id'";
+
+            $get_invoices_result = $con->query($get_invoices);
+
+            if($get_invoices_result->num_rows > 0){
+            ?>
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Company name</th>
+                    <th scope="col">Invoice title</th>
+                    <th scope="col">Invoice Date</th>
+                    <th scope="col">Invoice amount</th>
+                    <th scope="col">Invoice Status</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php
+                      $total_amount = 0;
+                      while($invoice = $get_invoices_result->fetch_assoc()) {
+                        ?>
+                        <tr>
+                          <td><?php echo $invoice['customer_company_name']; ?></td>
+                          <td><?php echo $invoice['inv_title']; ?></td>
+                          <td><?php echo $invoice['inv_date']; ?></td>
+                          <td><?php echo $invoice['inv_amount']; ?></td>
+                          <td><?php echo $invoice['inv_status']; ?></td>
+                          <td>
+                            <button type="submit">Open Invoice</button>
+                            <button type="submit">Send Email</button>
+                          </td>
+                        </tr>
+                        <?php
+                        $amount = $invoice['inv_amount'];
+                        $total_amount += $amount;
+                        $company_name = $invoice['customer_company_name'];
+                        $company_email = $invoice['customer_email'];
+                      }
+                      ?>
+                      
+                      <tr>
+                        <td><?php echo $company_name; ?></td>
+                        <td>Email: <?php echo $company_email; ?></td>
+                        <td></td>
+                        <td>Total amount: <?php echo $total_amount; ?></td>
+                        <td>Pending amount: </td>
+                      </tr>
+
+                      <?php
+                    }else{
+                      echo "Please enter atleast one invoice";
+                    }
+                  }else{
+                    echo "Please select the company.";
+                  }
+                ?>
+                </tbody>
+              </table>  
+          <?php
+        }
+      ?>
   </div>
 </div>
 
