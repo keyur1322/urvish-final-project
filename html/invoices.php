@@ -124,6 +124,7 @@ include('../php/connection.php');
 
             if($get_invoices_result->num_rows > 0){
             ?>
+          <!-- <div style="overflow-x:auto;"> -->
               <table>
                 <thead>
                   <tr>
@@ -176,7 +177,9 @@ include('../php/connection.php');
                   }
                 ?>
                 </tbody>
-              </table>  
+              </table> 
+          <!-- </div> -->
+               
           <?php
         }
       ?>
