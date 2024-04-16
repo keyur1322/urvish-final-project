@@ -72,7 +72,14 @@ if(isset($_POST['reg_btn']))
       VALUES ('$cname', '$cfname', '$clname', $cmobile, '$cemail')";
       
       if ($con->query($sql) === TRUE) {
-        echo "New record created successfully";
+
+        ?>
+          <script type="text/javascript">
+            alert("New record created successfully")
+          </script>
+        <?php
+
+        // echo "New record created successfully";
         // header("Location: index.html");
   
       } else {
