@@ -139,6 +139,7 @@ include('../php/connection.php');
                 <tbody>
                   <?php
                       $total_amount = 0;
+                      $pending_amount = 0;
                       while($invoice = $get_invoices_result->fetch_assoc()) {
                         ?>
                         <tr>
@@ -149,7 +150,11 @@ include('../php/connection.php');
                           <td><?php echo $invoice['inv_status']; ?></td>
                           <td>
                             <button type="submit">Open Invoice</button>
-                            <button type="submit">Send Email</button>
+                            <?php if($invoice['inv_status'] == "pending"){
+                              ?>
+                                <button type="submit">Send Email</button>
+                              <?php
+                            } ?>
                           </td>
                         </tr>
                         <?php
@@ -157,6 +162,11 @@ include('../php/connection.php');
                         $total_amount += $amount;
                         $company_name = $invoice['customer_company_name'];
                         $company_email = $invoice['customer_email'];
+
+                        if($invoice['inv_status'] == "pending"){
+                          $pen_amount = $invoice['inv_amount'];
+                          $pending_amount += $pen_amount;
+                        }
                       }
                       ?>
                       
@@ -164,8 +174,9 @@ include('../php/connection.php');
                         <td><?php echo $company_name; ?></td>
                         <td>Email: <?php echo $company_email; ?></td>
                         <td></td>
-                        <td>Total amount: <?php echo $total_amount; ?></td>
-                        <td>Pending amount: </td>
+                        <td>Total invoice amount: <?php echo $total_amount; ?></td>
+                        <td>Pending amount: <?php echo $pending_amount; ?></td>
+                        <td>Total paid amount: <?php echo $total_amount-$pending_amount; ?></td>
                       </tr>
 
                       <?php

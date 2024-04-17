@@ -38,7 +38,7 @@ include('../php/admin_register.php');
         <div class="col-xl-4 main-child-2 d-flex justify-content-center align-items-center flex-column pe-3 ps-3">
             <div class="register-card card shadow p-5 bg-body rounded w-100 mt-3 mb-3">
                 <h2 class="fw-bold">Registration</h2>
-                <p>Already registered with us? <a class="click-2" href="index.html">Login</a></p>
+                <p>Already registered with us? <a class="click-2" href="index.php">Login</a></p>
             <form method="post">
                 <div class="mb-3">
                     <div class="row">

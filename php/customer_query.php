@@ -80,7 +80,7 @@ if(isset($_POST['reg_btn']))
         <?php
 
         // echo "New record created successfully";
-        // header("Location: index.html");
+        // header("Location: index.php");
   
       } else {
         echo "Error: " . $sql . "<br>" . $con->error;

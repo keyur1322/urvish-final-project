@@ -30,7 +30,7 @@ include('../php/login.php');
 
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" name="email" placeholder="you@example.com" aria-describedby="emailHelp">
+            <input type="text" class="form-control" name="email" placeholder="you@example.com">
             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
           </div>
 
@@ -40,7 +40,7 @@ include('../php/login.php');
               <label for="exampleInputPassword1" class="form-label">Password</label>  
               <a class="click-1" href="#">forget password?</a>
             </div>  
-            <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Enter 6 character or more">
+            <input type="password" class="form-control" name="password" placeholder="Enter 6 character or more">
           </div>
 
 
@@ -59,7 +59,7 @@ include('../php/login.php');
         <br>
         <div class="d-flex">
           <div class="col-6 pe-2">
-            <button class="btn btn w-100"><i class="fab fa-google fa-1x"></i> Google </button>
+            <button class="btn btn w-100"><i class="fab fa-google fa-1x"></i> <a href="dashboard.html">Google</a></button>
           </div>
           <div class="col-6 pl-2">
             <button class=" btn-2 btn w-100"><i class="fa fa-facebook-square"></i> Facebook </button>

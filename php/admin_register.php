@@ -90,7 +90,7 @@ if(isset($_POST['admin_reg_btn']))
         <?php
 
         // echo "New record created successfully";
-        // header("Location: ../html/index.html");
+        // header("Location: ../html/index.php");
        } else {
         echo "Error: " . $admin_register_query . "<br>" . $con->error;
     }

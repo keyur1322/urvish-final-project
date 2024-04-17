@@ -20,7 +20,7 @@ if(isset($_POST['login_btn'])){
         <?php
 
         // echo "New record created successfully";
-        // header("Location: ../html/index.html");
+        // header("Location: ../html/index.php");
        } else {
         echo "Error: " . $login_query . "<br>" . $con->error;
     }
