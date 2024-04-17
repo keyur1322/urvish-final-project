@@ -29,11 +29,8 @@
     <div class="edit collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav my-nav-1">
         <li><a href="dashboard.html"><i class="fa-solid fa-gauge"></i>Dashboard</a></li>
-        <li><a href="#"><i class="fa-solid fa-gauge"></i>Classifier</a></li>
         <li><a href="customer_list.php"><i class="fa-solid fa-users"></i>Customers</a></li>
         <li><a href="invoices.php"><i class="fa-solid fa-receipt"></i>Invoices</a></li>
-        <li><a href="#"><i class="fa-solid fa-hourglass-half"></i>Pending Expenses</a></li>
-        <li><a href="#"><i class="fa-sharp fa-solid fa-square-check"></i>Expenses Overview</a></li>
         <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>logout</a></li>
       </ul>
     </div>
@@ -54,11 +51,8 @@
       <p class="nav-title">OPTIONS</p>
       <ul class="nav nav-pills nav-stacked my-nav">
         <li><a href="dashboard.html"><i class="fa-solid fa-gauge"></i>Dashboard</a></li>
-        <li><a href="#"><i class="fa-solid fa-gauge"></i>Classifier</a></li>
         <li><a href="customer_list.php"><i class="fa-solid fa-users"></i>Customers</a></li>
         <li><a href="invoices.php"><i class="fa-solid fa-receipt"></i>Invoices</a></li>
-        <li><a href="#"><i class="fa-solid fa-hourglass-half"></i>Pending Expenses</a></li>
-        <li><a href="#"><i class="fa-sharp fa-solid fa-square-check"></i>Expenses Overview</a></li>
         <li class="logout"><a href="#"><i class="fa-solid fa-right-from-bracket"></i>logout</a></li>
       </ul><br>
     </div>
