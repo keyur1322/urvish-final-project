@@ -1,3 +1,11 @@
+<?php
+
+include('../php/connection.php');
+include('../php/login.php');
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,26 +25,34 @@
        <div class="login-card card shadow p-5 bg-body rounded w-100 mt-3 mb-3">
         <h3 class="fw-bold">Login</h3>
         <p>Doesn't have an account?  <a class="click-1" href="registration.php">Signup</a></p>
-        <form>
+
+        <form method="post">
+
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="you@example.com" aria-describedby="emailHelp">
+            <input type="text" class="form-control" id="exampleInputEmail1" name="email" placeholder="you@example.com" aria-describedby="emailHelp">
             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
           </div>
+
+
           <div class="mb-3">
             <div class="d-flex justify-content-between">
               <label for="exampleInputPassword1" class="form-label">Password</label>  
               <a class="click-1" href="#">forget password?</a>
             </div>  
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter 6 character or more">
+            <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Enter 6 character or more">
           </div>
+
+
           <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Remember me</label>
           </div>
+
           <div class="d-grid">
-            <button class="btn-1" type="button"><a href="dashboard.html">Login</a></button>
+            <button class="btn-1" type="submit" name="login_btn" value="login_btn">login</button>
           </div>
+
         </form>
         <br>
         <div class="separator">or login with</div>
