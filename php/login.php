@@ -1,30 +1,17 @@
 <?php
 
-
 if(isset($_POST['login_btn'])){
 
     $login_email = $_POST['email'];
     $login_password = $_POST['password'];
 
-    $login_query = "INSERT INTO tbl_login (email, password)
-    values ('login_email', 'login_password')";
-    // $data = mysqli_query($con,$login_query);
-
-    if ($con->query($login_query) === TRUE) {
-
-
-        ?>
-          <script type="text/javascript">
-            alert("New record created successfully")
-          </script>
-        <?php
-
-        // echo "New record created successfully";
-        // header("Location: ../html/index.php");
-       } else {
-        echo "Error: " . $login_query . "<br>" . $con->error;
+    $login_query = "SELECT * FROM tbl_register WHERE email = '$login_email' AND password='$login_password'";
+    $login_query_result = $con->query($login_query);
+    
+    if ($login_query_result->num_rows > 0) {
+      header("Location: ../html/dashboard.html");
+    } else {
+      echo '<script>alert("User not found. If you are existing user, please check your email and password. Or, try to register with us!")</script>';
     }
-
 }
-
 ?>

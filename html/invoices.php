@@ -46,7 +46,7 @@ include('../php/connection.php');
         <li><a href="dashboard.html"><i class="fa-solid fa-gauge"></i>Dashboard</a></li>
         <li><a href="customer_list.php"><i class="fa-solid fa-users"></i>Customers</a></li>
         <li><a href="invoices.php"><i class="fa-solid fa-receipt"></i>Invoices</a></li>
-        <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>logout</a></li>
+        <li><a href="index.php"><i class="fa-solid fa-right-from-bracket"></i>logout</a></li>
       </ul>
     </div>
   </div>
@@ -71,14 +71,14 @@ include('../php/connection.php');
           <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa-solid fa-receipt"></i>Invoices</a>
           <ul class="collapse list-unstyled" id="homeSubmenu">
               <li>
-                  <a href="add_new_invoices.html">Add invoices</a>
+                  <a href="add_invoices.php">Add invoices</a>
               </li>
               <li>
                   <a href="invoices.php">Check invoices</a>
               </li>
           </ul>
         </li>
-        <li class="logout"><a href="#"><i class="fa-solid fa-right-from-bracket"></i>logout</a></li>
+        <li class="logout"><a href="index.php"><i class="fa-solid fa-right-from-bracket"></i>logout</a></li>
       </ul><br>
     </div>
     <!-- end desktop-tablet view navbar -->
