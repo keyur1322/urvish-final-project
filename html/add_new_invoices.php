@@ -1,3 +1,11 @@
+<?php
+
+include('../php/connection.php');
+include('../php/add_new_invoices.php');
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,9 +88,11 @@
      
     <div class="col-sm-10">
       <div class="well">
-        <h4>Dashboard</h4>
+        <h4>Add Invoice</h4>
       </div>
       <div>
+
+
         <form method="post">
           <div class="form-group">
               <label for="sel1" class="form-label">Company</label><br>
@@ -97,23 +107,23 @@
           </div>
 
           <div class="form-group">
+            <label>Invoice date</label>
+            <input type="text" class="form-control" id="number" placeholder="Enter invoice date" name="Invoice_date">
+          </div>
+
+          <div class="form-group">
             <label>Invoice title</label>
-            <input type="text" class="form-control" id="name">
+            <input type="text" class="form-control" id="name" placeholder="Enter invoice title" name="Invoice_title">
           </div>
 
           <div class="form-group">
             <label>Invoice description</label>
-            <input type="text" class="form-control" id="name">
-          </div>
-
-          <div class="form-group">
-            <label>Invoice date</label>
-            <input type="text" class="form-control" id="number">
+            <input type="text" class="form-control" id="name" placeholder="Enter invoice description" name="Invoice_description">
           </div>
 
           <div class="form-group">
             <label>Invoice tax</label>
-            <input type="text" class="form-control" id="email">
+            <input type="text" class="form-control" id="email" placeholder="Enter invoice tax" name="Invoice_tax">
           </div>
 
           <div class="form-group">
@@ -126,10 +136,10 @@
 
           <div class="form-group">
               <label>Invoice amount</label>
-              <input type="text" class="form-control" id="email">
+              <input type="text" class="form-control" id="email" placeholder="Enter invoice ampunt" name="Invoice_amount">
           </div>
 
-          <button type="submit" class="btn btn-primary">Add Invoices</button>
+          <button type="submit" class="btn btn-primary" name="inv_submit" value="inv_submit">Add Invoices</button>
         </form>
       </div>
     </div>
