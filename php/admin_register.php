@@ -77,7 +77,7 @@ if(isset($_POST['admin_reg_btn']))
 
   if($rfnameErr == '' & $rlnameErr == '' & $remailErr == '' & $rpasswordErr == '' & $rcpasswordErr == '' & $rdateErr == ''){
     
-    $admin_register_query = "INSERT INTO tbl_register (firstname, lastname, email, password, date_of_birth)
+    $admin_register_query = "INSERT INTO tbl_admin (firstname, lastname, email, password, date_of_birth)
     VALUES ('$afname', '$alname', '$aemail', '$apassword', '$adob')";
 
       if ($con->query($admin_register_query) === TRUE) {

@@ -58,7 +58,7 @@
                   <a href="add_invoices.php">Add invoices</a>
               </li>
               <li>
-                  <a href="invoices.php">Check invoices</a>
+                  <a href="invoices_list.php">Check invoices</a>
               </li>
           </ul>
         </li>
@@ -73,7 +73,7 @@
         <h4>List of customers</h4>
       </div>
         <div class="container">
-          <button class="btn"><a href="customer_register.php" class="text-light">Add user</a></button>
+          <button class="btn"><a href="add_customer.php" class="text-light">Add user</a></button>
             <div class="table-responsive">
               <table class="table table-bordered mt-5">
                 <thead>

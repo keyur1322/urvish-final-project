@@ -1,7 +1,7 @@
 <?php
 
 include('../php/connection.php');
-include('../php/login.php');
+include('../php/admin_login.php');
 
 ?>
 

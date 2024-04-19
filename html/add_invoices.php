@@ -1,10 +1,9 @@
 <?php
 
 include('../php/connection.php');
-// include('../php/add_new_invoices.php');
+include('../php/invoice_add.php');
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,21 +37,20 @@ include('../php/connection.php');
         <li class="active">
           <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa-solid fa-receipt"></i>Invoices</a>
           <ul class="collapse list-unstyled" id="homeSubmenu1">
-              <li>
-                  <a href="add_invoices.php">Add invoices</a>
-              </li>
-              <li>
-                  <a href="invoices.php">Check invoices</a>
-              </li>
+            <li>
+              <a href="add_invoices.php">Add invoices</a>
+            </li>
+            <li>
+              <a href="invoices_list.php">Check invoices</a>
+            </li>
           </ul>
-      </li>
+        </li>
         <li><a href="index.php"><i class="fa-solid fa-right-from-bracket"></i>logout</a></li>
       </ul>
     </div>
   </div>
 </nav>
 <!-- end mobile view navbar -->
-
 
 <div class="container-fluid main-div">
   <div class="row content">
@@ -75,11 +73,10 @@ include('../php/connection.php');
                   <a href="add_invoices.php">Add invoices</a>
               </li>
               <li>
-                  <a href="invoices.php">Check invoices</a>
+                  <a href="invoices_list.php">Check invoices</a>
               </li>
           </ul>
-      </li>
-        
+        </li>
         <li class="logout"><a href="index.php"><i class="fa-solid fa-right-from-bracket"></i>logout</a></li>
       </ul><br>
     </div>
@@ -92,55 +89,65 @@ include('../php/connection.php');
       </div>
       <div>
 
+      <?php
+    
+      $get_all_company_data = 'SELECT * FROM tbl_customer';
+      $get_all_company_data_result = $con->query($get_all_company_data);
 
-        <form method="post">
-          <div class="form-group">
-              <label for="sel1" class="form-label">Company</label><br>
-              <select class="form-select" id="sel1" name="sellist1">
-                <option>select</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-              </select>
-            <!-- <input type="text" class="form-control" id="name"> -->
-          </div>
+      ?>
 
-          <div class="form-group">
-            <label>Invoice date</label>
-            <input type="date" class="form-control" id="number" placeholder="Enter invoice date" name="Invoice_date">
-          </div>
+      <form method="post">
+        <div class="form-group">
+          <label>Customer Company</label><br>
+          <select class="form-select" name="companies">
+          <option value = "" selected>Select option</option>
+          <?php
+            if($get_all_company_data_result->num_rows > 0){
+              while($company = $get_all_company_data_result->fetch_assoc()) {
+                ?>
+                  <option value="<?php echo $company['customer_id']; ?>"><?php echo $company['customer_company_name']; ?></option>
+                <?php
+              }
+            }
+          ?>
+        </select>
+        </div>
 
-          <div class="form-group">
-            <label>Invoice title</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter invoice title" name="Invoice_title">
-          </div>
+        <div class="form-group">
+          <label>Invoice date</label>
+          <input type="date" class="form-control" placeholder="Enter invoice date" name="invoice_date">
+        </div>
 
-          <div class="form-group">
-            <label>Invoice description</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter invoice description" name="Invoice_description">
-          </div>
+        <div class="form-group">
+          <label>Invoice title</label>
+          <input type="text" class="form-control" placeholder="Enter invoice title" name="invoice_title">
+        </div>
 
-          <div class="form-group">
-            <label>Invoice tax</label>
-            <input type="text" class="form-control" id="email" placeholder="Enter invoice tax" name="Invoice_tax">
-          </div>
+        <div class="form-group">
+          <label>Invoice description</label>
+          <textarea type="text" class="form-control" placeholder="Enter invoice description" name="invoice_description"></textarea>
+        </div>
 
-          <div class="form-group">
-              <label for="">Invoice status</label><br>
-              <input type="radio" id="option1" name="option" value="option1">
-              <label for="option1">Paid</label>
-              <input type="radio" id="option2" name="option" value="option2">
-              <label for="option2">Pending</label>
-          </div>
+        <div class="form-group">
+          <label>Invoice tax</label>
+          <input type="text" class="form-control" placeholder="Enter invoice tax" name="invoice_tax">
+        </div>
 
-          <div class="form-group">
-              <label>Invoice amount</label>
-              <input type="text" class="form-control" id="email" placeholder="Enter invoice ampunt" name="Invoice_amount">
-          </div>
+        <div class="form-group">
+            <label>Invoice status</label><br>
+            <input type="radio" name="invoice_status" value="paid">
+            <label for="option1">Paid</label>
+            <input type="radio" name="invoice_status" value="pending">
+            <label for="option2">Pending</label>
+        </div>
 
-          <button type="submit" class="btn btn-primary" name="inv_submit" value="inv_submit">Add Invoices</button>
-        </form>
+        <div class="form-group">
+            <label>Invoice amount</label>
+            <input type="text" class="form-control" placeholder="Enter invoice ampunt" name="invoice_amount">
+        </div>
+
+        <button type="submit" class="btn btn-primary" value="inv_submit" name="inv_submit">Add Invoices</button>
+      </form>
       </div>
     </div>
   </div>

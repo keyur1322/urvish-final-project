@@ -45,7 +45,7 @@ include('../php/connection.php');
       <ul class="nav navbar-nav my-nav-1">
         <li><a href="dashboard.html"><i class="fa-solid fa-gauge"></i>Dashboard</a></li>
         <li><a href="customer_list.php"><i class="fa-solid fa-users"></i>Customers</a></li>
-        <li><a href="invoices.php"><i class="fa-solid fa-receipt"></i>Invoices</a></li>
+        <li><a href="invoices_list.php"><i class="fa-solid fa-receipt"></i>Invoices</a></li>
         <li><a href="index.php"><i class="fa-solid fa-right-from-bracket"></i>logout</a></li>
       </ul>
     </div>
@@ -74,7 +74,7 @@ include('../php/connection.php');
                   <a href="add_invoices.php">Add invoices</a>
               </li>
               <li>
-                  <a href="invoices.php">Check invoices</a>
+                  <a href="invoices_list.php">Check invoices</a>
               </li>
           </ul>
         </li>
