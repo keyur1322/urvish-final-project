@@ -1,5 +1,6 @@
 <?php
 
+$icompenyErr = $idateErr = $ititleErr = $idescriptionErr = $itaxErr = $istatustErr = $iamountErr = '';
 include('../php/connection.php');
 include('../php/invoice_add.php');
 
@@ -18,6 +19,14 @@ include('../php/invoice_add.php');
   <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
  
 </head>
+
+<style>
+    .error{
+        color: red;
+    }
+</style>
+
+
 <body>
 <!-- start mobile view navbar -->
 <nav class="navbar navbar-inverse visible-xs">
@@ -101,6 +110,7 @@ include('../php/invoice_add.php');
           <label>Customer Company</label><br>
           <select class="form-select" name="companies">
           <option value = "" selected>Select option</option>
+          <span class="error"><?php echo $icompenyErr;?></span>
           <?php
             if($get_all_company_data_result->num_rows > 0){
               while($company = $get_all_company_data_result->fetch_assoc()) {
@@ -116,21 +126,25 @@ include('../php/invoice_add.php');
         <div class="form-group">
           <label>Invoice date</label>
           <input type="date" class="form-control" placeholder="Enter invoice date" name="invoice_date">
+          <span class="error"><?php echo $idateErr;?></span>
         </div>
 
         <div class="form-group">
           <label>Invoice title</label>
           <input type="text" class="form-control" placeholder="Enter invoice title" name="invoice_title">
+          <span class="error"><?php echo $ititleErr;?></span>
         </div>
 
         <div class="form-group">
           <label>Invoice description</label>
           <textarea type="text" class="form-control" placeholder="Enter invoice description" name="invoice_description"></textarea>
+          <span class="error"><?php echo $idescriptionErr;?></span>
         </div>
 
         <div class="form-group">
           <label>Invoice tax</label>
           <input type="text" class="form-control" placeholder="Enter invoice tax" name="invoice_tax">
+          <span class="error"><?php echo $itaxErr;?></span>
         </div>
 
         <div class="form-group">
@@ -139,11 +153,13 @@ include('../php/invoice_add.php');
             <label for="option1">Paid</label>
             <input type="radio" name="invoice_status" value="pending">
             <label for="option2">Pending</label>
+            <span class="error"><?php echo $istatustErr;?></span>
         </div>
 
         <div class="form-group">
             <label>Invoice amount</label>
-            <input type="text" class="form-control" placeholder="Enter invoice ampunt" name="invoice_amount">
+            <input type="text" class="form-control" placeholder="Enter invoice amount" name="invoice_amount">
+            <span class="error"><?php echo $iamountErr;?></span>
         </div>
 
         <button type="submit" class="btn btn-primary" value="inv_submit" name="inv_submit">Add Invoices</button>

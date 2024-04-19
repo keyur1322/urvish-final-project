@@ -1,5 +1,6 @@
 <?php
 
+$alemailErr = $alpasswordErr = '';
 include('../php/connection.php');
 include('../php/admin_login.php');
 
@@ -18,6 +19,13 @@ include('../php/admin_login.php');
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
   <title>Login</title>
 </head>
+
+<style>
+    .error{
+        color: red;
+    }
+</style>
+
 <body>
   <div class="main-div row d-flex justify-content-center container-fluid">
     <!-- <div class="row box"> -->
@@ -31,6 +39,7 @@ include('../php/admin_login.php');
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
             <input type="text" class="form-control" name="email" placeholder="you@example.com">
+            <span class="error"><?php echo $alemailErr;?></span>
             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
           </div>
 
@@ -41,6 +50,7 @@ include('../php/admin_login.php');
               <a class="click-1" href="#">forget password?</a>
             </div>  
             <input type="password" class="form-control" name="password" placeholder="Enter 6 character or more">
+            <span class="error"><?php echo $alpasswordErr;?></span>
           </div>
 
 
@@ -61,10 +71,13 @@ include('../php/admin_login.php');
           <div class="col-6 pe-2">
             <button class="btn btn w-100"><i class="fab fa-google fa-1x"></i> <a href="dashboard.html">Google</a></button>
           </div>
-          <div class="col-6 pl-2">
+          <!-- <div class="col-6 pl-2">
             <button class=" btn-2 btn w-100"><i class="fa fa-facebook-square"></i> Facebook </button>
-          </div>
+          </div> -->
         </div>
+
+        <span class="error"><?php echo "error";?></span>
+        
       </div>
       </div>
       <div class="main-child-2 col-xl-4 d-flex justify-content-center align-items-center flex-column ps-0 pe-0">

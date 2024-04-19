@@ -1,6 +1,6 @@
 <?php
 
-$rfnameErr =$rlnameErr = $remailErr = $rpasswordErr = $rcpasswordErr = $rdateErr = '';
+$rfnameErr = $rlnameErr = $remailErr = $rpasswordErr = $rcpasswordErr = $rdateErr = '';
 include('../php/connection.php');
 include('../php/admin_register.php');
 
