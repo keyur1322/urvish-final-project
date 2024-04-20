@@ -110,7 +110,6 @@ include('../php/invoice_add.php');
           <label>Customer Company</label><br>
           <select class="form-select" name="companies">
           <option value = "" selected>Select option</option>
-          <span class="error"><?php echo $icompenyErr;?></span>
           <?php
             if($get_all_company_data_result->num_rows > 0){
               while($company = $get_all_company_data_result->fetch_assoc()) {
@@ -120,8 +119,9 @@ include('../php/invoice_add.php');
               }
             }
           ?>
-        </select>
-        </div>
+        </select><br>
+        <span class="error"><?php echo $icompenyErr;?></span>  
+      </div>
 
         <div class="form-group">
           <label>Invoice date</label>
@@ -152,7 +152,7 @@ include('../php/invoice_add.php');
             <input type="radio" name="invoice_status" value="paid">
             <label for="option1">Paid</label>
             <input type="radio" name="invoice_status" value="pending">
-            <label for="option2">Pending</label>
+            <label for="option2">Pending</label><br>
             <span class="error"><?php echo $istatustErr;?></span>
         </div>
 

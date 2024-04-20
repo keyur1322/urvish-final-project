@@ -21,9 +21,9 @@ include('../php/admin_login.php');
 </head>
 
 <style>
-    .error{
-        color: red;
-    }
+  .error{
+    color: red;
+  }
 </style>
 
 <body>
@@ -68,8 +68,8 @@ include('../php/admin_login.php');
         <div class="separator">or login with</div>
         <br>
         <div class="d-flex">
-          <div class="col-6 pe-2">
-            <button class="btn btn w-100"><i class="fab fa-google fa-1x"></i> <a href="dashboard.html">Google</a></button>
+          <div class="col-12 pe-2">
+            <button class="btn w-100"><i class="fab fa-google fa-1x"></i> <a href="dashboard.html">Google</a></button>
           </div>
           <!-- <div class="col-6 pl-2">
             <button class=" btn-2 btn w-100"><i class="fa fa-facebook-square"></i> Facebook </button>

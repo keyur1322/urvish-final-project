@@ -86,11 +86,8 @@ include('../php/admin_register.php');
                 </div>
 
                 <div class="d-flex">
-                    <div class="col-6 pe-2">
-                      <button class="btn btn w-100"><i class="fab fa-google fa-1x"></i> Google </button>
-                    </div>
-                    <div class="col-6 pl-2">
-                      <button class=" btn-2 btn w-100"><i class="fa fa-facebook-square"></i> Facebook </button>
+                    <div class="col-12 pe-2">
+                      <button class="btn w-100"><i class="fab fa-google fa-1x"></i> Google </button>
                     </div>
                 </div>
             </form>

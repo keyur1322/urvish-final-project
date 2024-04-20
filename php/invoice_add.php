@@ -2,18 +2,18 @@
 
 if(isset($_POST['inv_submit'])){
 
-    echo $customer_id = $_POST['companies'];
-    echo "</br>"; echo $inv_date = $_POST['invoice_date'];
-    echo "</br>"; echo $inv_title = $_POST['invoice_title'];
-    echo "</br>"; echo $inv_description = $_POST['invoice_description'];
-    echo "</br>"; echo $inv_tax = $_POST['invoice_tax'];
-    echo "</br>"; echo $inv_amount = $_POST['invoice_amount'];
-    echo "</br>"; echo $inv_status = $_POST['invoice_status'];
+    $customer_id = $_POST['companies'];
+    $inv_date = $_POST['invoice_date'];
+    $inv_title = $_POST['invoice_title'];
+    $inv_description = $_POST['invoice_description'];
+    $inv_tax = $_POST['invoice_tax'];
+    $inv_amount = $_POST['invoice_amount'];
+    $inv_status = $_POST['invoice_status'];
 
 
     // date validation
-    if (empty($customer_id)) {
-      $icompenyErr = "Please select compeny";
+    if ($customer_id == "") {
+      $icompenyErr = "Please select company";
     }
     else
     {
