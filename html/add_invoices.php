@@ -54,6 +54,7 @@ include('../php/invoice_add.php');
             </li>
           </ul>
         </li>
+        <li><a href="profile.html"><i class="fa-solid fa-user"></i>Profile</a></li>
         <li><a href="index.php"><i class="fa-solid fa-right-from-bracket"></i>logout</a></li>
       </ul>
     </div>
@@ -86,6 +87,7 @@ include('../php/invoice_add.php');
               </li>
           </ul>
         </li>
+        <li><a href="profile.html"><i class="fa-solid fa-user"></i>Profile</a></li>
         <li class="logout"><a href="index.php"><i class="fa-solid fa-right-from-bracket"></i>logout</a></li>
       </ul><br>
     </div>

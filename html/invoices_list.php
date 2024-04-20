@@ -46,6 +46,7 @@ include('../php/connection.php');
         <li><a href="dashboard.html"><i class="fa-solid fa-gauge"></i>Dashboard</a></li>
         <li><a href="customer_list.php"><i class="fa-solid fa-users"></i>Customers</a></li>
         <li><a href="invoices_list.php"><i class="fa-solid fa-receipt"></i>Invoices</a></li>
+        <li><a href="profile.html"><i class="fa-solid fa-user"></i>Profile</a></li>
         <li><a href="index.php"><i class="fa-solid fa-right-from-bracket"></i>logout</a></li>
       </ul>
     </div>
@@ -78,6 +79,7 @@ include('../php/connection.php');
               </li>
           </ul>
         </li>
+        <li><a href="profile.html"><i class="fa-solid fa-user"></i>Profile</a></li>
         <li class="logout"><a href="index.php"><i class="fa-solid fa-right-from-bracket"></i>logout</a></li>
       </ul><br>
     </div>
