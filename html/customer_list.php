@@ -13,7 +13,14 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/common.css">
+
 </head>
+<style>
+  .btn-success a, .btn-danger a, .btn-primary a{
+    color: white !important;
+  }
+</style>
 <body>
 <!-- start mobile view navbar -->
 <nav class="navbar navbar-inverse visible-xs">
@@ -30,6 +37,17 @@
       <ul class="nav navbar-nav my-nav-1">
         <li><a href="dashboard.html"><i class="fa-solid fa-gauge"></i>Dashboard</a></li>
         <li><a href="customer_list.php"><i class="fa-solid fa-users"></i>Customers</a></li>
+        <li>
+          <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa-solid fa-receipt"></i>Invoices</a>
+          <ul class="collapse list-unstyled" id="homeSubmenu1">
+              <li>
+                  <a href="add_invoices.php">Add invoices</a>
+              </li>
+              <li>
+                  <a href="invoices_list.php">Check invoices</a>
+              </li>
+          </ul>
+        </li>
         <li><a href="profile.html"><i class="fa-solid fa-user"></i>Profile</a></li>
         <li><a href="index.php"><i class="fa-solid fa-right-from-bracket"></i>logout</a></li>
       </ul>
@@ -52,7 +70,7 @@
       <ul class="nav nav-pills nav-stacked my-nav">
         <li><a href="dashboard.html"><i class="fa-solid fa-gauge"></i>Dashboard</a></li>
         <li><a href="customer_list.php"><i class="fa-solid fa-users"></i>Customers</a></li>
-        <li class="active">
+        <li>
           <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa-solid fa-receipt"></i>Invoices</a>
           <ul class="collapse list-unstyled" id="homeSubmenu">
               <li>
@@ -75,8 +93,8 @@
         <h4>List of customers</h4>
       </div>
         <div class="container">
-          <button class="btn"><a href="add_customer.php" class="text-light">Add user</a></button>
-            <div class="table-responsive">
+          <button class="btn btn-primary"><a href="add_customer.php" class="text-light">Add user</a></button>
+            <div class="main-table-div table-responsive">
               <table class="table table-bordered mt-5">
                 <thead>
                   <tr>

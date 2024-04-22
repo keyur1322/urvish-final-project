@@ -1,6 +1,6 @@
 <?php
 
-$alemailErr = $alpasswordErr = '';
+$alemailErr = $alpasswordErr = $user_not_found_error = '';
 include('../php/connection.php');
 include('../php/admin_login.php');
 
@@ -10,6 +10,7 @@ include('../php/admin_login.php');
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>Login</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -17,7 +18,7 @@ include('../php/admin_login.php');
   <link rel="stylesheet" href="../css/login.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-  <title>Login</title>
+   
 </head>
 
 <style>
@@ -76,7 +77,7 @@ include('../php/admin_login.php');
           </div> -->
         </div>
 
-        <span class="error"><?php echo "error";?></span>
+        <span class="error"><?php echo $user_not_found_error;?></span>
         
       </div>
       </div>

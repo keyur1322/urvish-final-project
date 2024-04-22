@@ -17,7 +17,7 @@ include('../php/customer_add.php');
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
- 
+  <link rel="stylesheet" href="../css/common.css">
 </head>
 <style>
   .error{
@@ -40,7 +40,7 @@ include('../php/customer_add.php');
       <ul class="nav navbar-nav my-nav-1">
         <li><a href="dashboard.html"><i class="fa-solid fa-gauge"></i>Dashboard</a></li>
         <li><a href="customer_list.php"><i class="fa-solid fa-users"></i>Customers</a></li>
-        <li class="active">
+        <li>
           <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa-solid fa-receipt"></i>Invoices</a>
           <ul class="collapse list-unstyled" id="homeSubmenu1">
               <li>
@@ -74,7 +74,7 @@ include('../php/customer_add.php');
         <li><a href="dashboard.html"><i class="fa-solid fa-gauge"></i>Dashboard</a></li>
         <li><a href="customer_list.php"><i class="fa-solid fa-users"></i>Customers</a></li>
        
-        <li class="active">
+        <li>
           <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa-solid fa-receipt"></i>Invoices</a>
           <ul class="collapse list-unstyled" id="homeSubmenu">
               <li>

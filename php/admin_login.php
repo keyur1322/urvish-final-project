@@ -44,7 +44,8 @@ if(isset($_POST['login_btn'])){
     if ($login_query_result->num_rows > 0) {
       header("Location: ../html/dashboard.html");
     } else {
-      echo '<script>alert("User not found. If you are existing user, please check your email and password. Or, try to register with us!")</script>';
+      $user_not_found_error = 'User not found. If you are existing user, please check your email and password. Or, try to register with us!';
+      // echo '<script>alert("User not found. If you are existing user, please check your email and password. Or, try to register with us!")</script>';
     }
   }
 }

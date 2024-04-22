@@ -60,9 +60,6 @@ html, body{
   font-size: 1.5rem;
   color: white;
 }
-.my-nav>li>a:hover, .my-nav>li>a:focus {
-  background-color: transparent !important;
-}
 
 .my-nav li a i{
   margin-right: 5% !important;

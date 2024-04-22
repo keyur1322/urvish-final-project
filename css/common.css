@@ -1,0 +1,11 @@
+.navbar-inverse .navbar-nav>.active>a {
+    background-color: transparent !important;
+}
+
+.my-nav>li>a:hover, .my-nav>li>a:focus {
+    background-color: transparent !important;
+}
+
+.main-table-div{
+    margin-top: 2%;
+}
