@@ -1,3 +1,9 @@
+<?php
+
+include('../php/profile_data.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

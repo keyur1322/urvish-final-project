@@ -30,12 +30,15 @@ include('../php/invoice_add.php');
       border-radius: 10px;
       box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     }
-    .main-form{
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
+    @media only screen and (min-width: 992px) {
+      .main-form{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
     }
+    
 </style>
 
 
