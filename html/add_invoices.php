@@ -69,7 +69,7 @@ include('../php/invoice_add.php');
             </li>
           </ul>
         </li>
-        <li><a href="profile.html"><i class="fa-solid fa-user"></i>Profile</a></li>
+        <li><a href="profile.php"><i class="fa-solid fa-user"></i>Profile</a></li>
         <li><a href="index.php"><i class="fa-solid fa-right-from-bracket"></i>logout</a></li>
       </ul>
     </div>
@@ -102,7 +102,7 @@ include('../php/invoice_add.php');
               </li>
           </ul>
         </li>
-        <li><a href="profile.html"><i class="fa-solid fa-user"></i>Profile</a></li>
+        <li><a href="profile.php"><i class="fa-solid fa-user"></i>Profile</a></li>
         <li class="logout"><a href="index.php"><i class="fa-solid fa-right-from-bracket"></i>logout</a></li>
       </ul><br>
     </div>
@@ -113,6 +113,7 @@ include('../php/invoice_add.php');
       <div class="well">
         <h4>Add Invoice</h4>
       </div>
+      
       <div class="main-form">
         <div class="col-md-8 invoice-form">
 

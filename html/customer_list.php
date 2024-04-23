@@ -48,7 +48,7 @@
               </li>
           </ul>
         </li>
-        <li><a href="profile.html"><i class="fa-solid fa-user"></i>Profile</a></li>
+        <li><a href="profile.php"><i class="fa-solid fa-user"></i>Profile</a></li>
         <li><a href="index.php"><i class="fa-solid fa-right-from-bracket"></i>logout</a></li>
       </ul>
     </div>
@@ -81,7 +81,7 @@
               </li>
           </ul>
         </li>
-        <li><a href="profile.html"><i class="fa-solid fa-user"></i>Profile</a></li>
+        <li><a href="profile.php"><i class="fa-solid fa-user"></i>Profile</a></li>
         <li class="logout"><a href="index.php"><i class="fa-solid fa-right-from-bracket"></i>logout</a></li>
       </ul><br>
     </div>
@@ -92,7 +92,7 @@
       <div class="well">
         <h4>List of customers</h4>
       </div>
-        <div class="container">
+        <div class="">
           <button class="btn btn-primary"><a href="add_customer.php" class="text-light">Add user</a></button>
             <div class="main-table-div table-responsive">
               <table class="table table-bordered mt-5">

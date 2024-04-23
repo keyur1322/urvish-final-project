@@ -23,6 +23,19 @@ include('../php/customer_add.php');
   .error{
     color: red;
   }
+  .invoice-form{
+      padding: 2%;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    }
+    @media only screen and (min-width: 992px) {
+      .main-form{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+    }
 </style>
 <body>
 <!-- start mobile view navbar -->
@@ -51,7 +64,7 @@ include('../php/customer_add.php');
               </li>
           </ul>
       </li>
-      <li><a href="profile.html"><i class="fa-solid fa-user"></i>Profile</a></li>
+      <li><a href="profile.php"><i class="fa-solid fa-user"></i>Profile</a></li>
       <li><a href="index.php"><i class="fa-solid fa-right-from-bracket"></i>logout</a></li>
       </ul>
     </div>
@@ -85,7 +98,7 @@ include('../php/customer_add.php');
               </li>
           </ul>
       </li>
-      <li><a href="profile.html"><i class="fa-solid fa-user"></i>Profile</a></li>
+      <li><a href="profile.php"><i class="fa-solid fa-user"></i>Profile</a></li>
       <li class="logout"><a href="index.php"><i class="fa-solid fa-right-from-bracket"></i>logout</a></li>
       </ul><br>
     </div>
@@ -96,8 +109,8 @@ include('../php/customer_add.php');
       <div class="well">
         <h4>Customer Registration</h4>
       </div>
-      <div class="card">
-        <div class="card-body">
+      <div class="main-form">
+        <div class="col-md-8 invoice-form">
           <form method="post">
             <div class="form-group">
               <label for="name">Customer Company Name</label>

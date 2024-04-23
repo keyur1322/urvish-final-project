@@ -56,7 +56,7 @@ include('../php/connection.php');
               </li>
           </ul>
         </li>
-        <li><a href="profile.html"><i class="fa-solid fa-user"></i>Profile</a></li>
+        <li><a href="profile.php"><i class="fa-solid fa-user"></i>Profile</a></li>
         <li><a href="index.php"><i class="fa-solid fa-right-from-bracket"></i>logout</a></li>
       </ul>
     </div>
@@ -89,7 +89,7 @@ include('../php/connection.php');
               </li>
           </ul>
         </li>
-        <li><a href="profile.html"><i class="fa-solid fa-user"></i>Profile</a></li>
+        <li><a href="profile.php"><i class="fa-solid fa-user"></i>Profile</a></li>
         <li class="logout"><a href="index.php"><i class="fa-solid fa-right-from-bracket"></i>logout</a></li>
       </ul><br>
     </div>
@@ -100,7 +100,7 @@ include('../php/connection.php');
       <div class="well">
         <h4>Invoices</h4>
       </div>
-        <div class="container">
+        <div class="">
           <?php
           $get_all_company_name = 'SELECT * FROM tbl_customer';
           $get_all_company_name_result = $con->query($get_all_company_name);
