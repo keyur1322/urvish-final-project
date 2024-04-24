@@ -9,3 +9,7 @@
 .main-table-div{
     margin-top: 2%;
 }
+
+.error{
+    color: red !important;
+}

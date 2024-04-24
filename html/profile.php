@@ -1,5 +1,6 @@
 <?php
 
+include('../php/connection.php');
 include('../php/profile_data.php');
 
 ?>
@@ -114,8 +115,31 @@ include('../php/profile_data.php');
       </div>
       <div class="card profile-card">
         <div class="row">
+        
+        <?php
+          if($user_profile_data_result->num_rows > 0){
+            $user_profile_data = $user_profile_data_result->fetch_assoc();
+
+            // echo "<pre>"; print_r($user_profile_data); echo "</pre>";
+            // die;
+
+        ?>
+
           <div class="col-md-4">
-            <img src="https://via.placeholder.com/250" class="card-img" alt="User Photo">
+
+            <?php
+            
+            if(empty($user_profile_data['profile_picture'])){
+              ?>
+              <img style="width: 250px;" src="../images/admin_profile/dummy-profile.png" class="card-img" alt="User Photo">
+              <?php
+            }else{
+              ?>
+              <img style="width: 250px;" src="../images/admin_profile/<?php echo $user_profile_data['profile_picture'];?>" class="card-img" alt="User Photo">
+              <?php
+            }
+            ?>
+
           </div>
           <div class="col-md-8">
             <div class="card-body">
@@ -124,40 +148,67 @@ include('../php/profile_data.php');
                 <div class="col-md-6" style="padding-left: 0 !important;">
                   <div class="form-group">
                     <label for="name">First Name</label>
-                    <p>First name will go here</p>
+                    <p><?php echo $user_profile_data['firstname']; ?></p>
                   </div>
   
                   <div class="form-group">
                     <label for="name">Last Name</label>
-                    <p>Last name will go here</p>
+                    <p><?php echo $user_profile_data['lastname']; ?></p>
                   </div>
   
                   <div class="form-group">
                     <label for="email">Email</label>
-                    <p>Email will go here</p>
+                    <p><?php echo $user_profile_data['email']; ?></p>
                   </div>
                 </div>
                 
                 <div class="col-md-6" style="padding-left: 0 !important;">
                   <div class="form-group">
                     <label>Date of Birth</label>
-                    <p>Birthdate will go here</p>
+                    <p><?php echo $user_profile_data['date_of_birth']; ?></p>
                   </div>
   
                   <div class="form-group">
                     <label>Gender</label>
-                    <p>Gender will go here</p>
+                    <p><?php if($user_profile_data['gender'] == 1){echo "Male";}else{ echo "Female";} ?></p>
                   </div>
   
                   <div class="form-group">
                     <label>Address</label>
-                    <p>Address will go here</p>
+                    <?php
+                    
+                    if(empty($user_profile_data['address'])){
+                      ?>
+                      <p class="error">Please first add your profile!</p>
+                      <?php
+                    }else{
+                      ?>
+                      <p><?php echo $user_profile_data['address'].", ".$user_profile_data['city'].", ".$user_profile_data['country']." - ".$user_profile_data['postal_code']; ?></p>
+                      <?php
+                    }
+                    ?>
                   </div>
                 </div>
-                <button type="submit" href="#" class="btn btn-primary">Edit Profile</button>
+                <?php
+            
+                  if(empty($user_profile_data['profile_picture'])){
+                    ?>
+                    <button type="submit" href="#" class="btn btn-success">Add Profile</button>
+                    <?php
+                  }else{
+                    ?>
+                    <button type="submit" href="#" class="btn btn-primary">Edit Profile</button>
+                    <?php
+                  }
+                ?>
               </form>
             </div>
           </div>
+        
+        <?php
+        }
+        ?>
+        
         </div>
       </div>
     </div>
