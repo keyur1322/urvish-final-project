@@ -70,7 +70,7 @@ include('../php/admin_login.php');
         <br>
         <div class="d-flex">
           <div class="col-12 pe-2">
-            <button class="btn w-100"><i class="fab fa-google fa-1x"></i> <a href="dashboard.html">Google</a></button>
+            <button class="btn w-100"><i class="fab fa-google fa-1x"></i> <a href="dashboard.php">Google</a></button>
           </div>
           <!-- <div class="col-6 pl-2">
             <button class=" btn-2 btn w-100"><i class="fa fa-facebook-square"></i> Facebook </button>

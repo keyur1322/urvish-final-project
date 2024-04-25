@@ -1,3 +1,10 @@
+<?php
+
+include('../php/connection.php');
+include('../php/dashboard_data.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +19,25 @@
   <link rel="stylesheet" href="../css/common.css">
  
 </head>
+<style>
+  .card {
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+    color: white;
+    padding: 2%;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    margin-bottom: 2%;
+  }
 
+  .card_title{
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  .card_data{
+    font-size: 2rem;
+  }
+</style>
 <body>
 <!-- start mobile view navbar -->
 <nav class="navbar navbar-inverse visible-xs">
@@ -27,7 +52,7 @@
     </div>
     <div class="edit collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav my-nav-1">
-        <li><a href="dashboard.html"><i class="fa-solid fa-gauge"></i>Dashboard</a></li>
+        <li><a href="dashboard.php"><i class="fa-solid fa-gauge"></i>Dashboard</a></li>
         <li><a href="customer_list.php"><i class="fa-solid fa-users"></i>Customers</a></li>
         <li>
           <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa-solid fa-receipt"></i>Invoices</a>
@@ -60,7 +85,7 @@
       
       <p class="nav-title">OPTIONS</p>
       <ul class="nav nav-pills nav-stacked my-nav">
-        <li><a href="dashboard.html"><i class="fa-solid fa-gauge"></i>Dashboard</a></li>
+        <li><a href="dashboard.php"><i class="fa-solid fa-gauge"></i>Dashboard</a></li>
         <li><a href="customer_list.php"><i class="fa-solid fa-users"></i>Customers</a></li>
        
         <li>
@@ -84,6 +109,24 @@
     <div class="col-sm-10">
       <div class="well">
         <h4>Dashboard</h4>
+      </div>
+      <div class="col">
+        <div class="card">
+          <p class="card_title">Total Customer</p>
+          <p class="card_data"><?php echo $total_customers['customer_count']; ?></p>
+        </div>
+        <div class="card">
+          <p class="card_title">Total Paid balance by all customers</p>
+          <p class="card_data"><?php echo $total_paid['paid_balance']; ?></p>
+        </div>
+        <div class="card">
+          <p class="card_title">Total Remaining balance by all customers</p>
+          <p class="card_data"><?php echo $total_remaining['remaining_balance']; ?></p>
+        </div>
+        <div class="card">
+          <p class="card_title">Total Pending invoices</p>
+          <p class="card_data"><?php echo $total_pending_inv['pending_inv_count']; ?></p>
+        </div>
       </div>
     </div>
   </div>

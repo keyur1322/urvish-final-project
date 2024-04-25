@@ -43,7 +43,7 @@ include('../php/connection.php');
     </div>
     <div class="edit collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav my-nav-1">
-        <li><a href="dashboard.html"><i class="fa-solid fa-gauge"></i>Dashboard</a></li>
+        <li><a href="dashboard.php"><i class="fa-solid fa-gauge"></i>Dashboard</a></li>
         <li><a href="customer_list.php"><i class="fa-solid fa-users"></i>Customers</a></li>
         <li>
           <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa-solid fa-receipt"></i>Invoices</a>
@@ -76,7 +76,7 @@ include('../php/connection.php');
       
       <p class="nav-title">OPTIONS</p>
       <ul class="nav nav-pills nav-stacked my-nav">
-        <li><a href="dashboard.html"><i class="fa-solid fa-gauge"></i>Dashboard</a></li>
+        <li><a href="dashboard.php"><i class="fa-solid fa-gauge"></i>Dashboard</a></li>
         <li><a href="customer_list.php"><i class="fa-solid fa-users"></i>Customers</a></li>
         <li>
           <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa-solid fa-receipt"></i>Invoices</a>
