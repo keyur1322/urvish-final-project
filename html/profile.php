@@ -1,5 +1,6 @@
 <?php
 
+$paddressErr = $pcityErr = $pcountryErr = $pcodeErr = '';
 include('../php/connection.php');
 include('../php/profile_data.php');
 
@@ -24,6 +25,10 @@ include('../php/profile_data.php');
  
   
   <style>
+
+  .error{
+    color: red;
+  }
     .profile-card {
       padding: 2%;
       box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
@@ -140,7 +145,7 @@ include('../php/profile_data.php');
           <div class="col-md-8">
             <div class="card-body">
               <p class="profile-title">Profile Information</p>
-              <form>
+              <form method="post">
                 <div class="col-md-6" style="padding-left: 0 !important;">
                   <div class="form-group">
                     <label for="name">First Name</label>
@@ -200,34 +205,40 @@ include('../php/profile_data.php');
                               <button type="button" class="close" data-dismiss="modal">&times;</button>
                               <h4 class="modal-title">Select</h4>
                             </div>
+                            <form>
+                              
+                          <!-- </form method="post"> -->
                             <div class="modal-body">
-                              <!-- <button type="submit" href="#" class="btn btn-success">Add Profile</button>
-                              <button type="submit" href="#" class="btn btn-primary">Edit Profile</button> -->
-
-                            <label>Address</label>
-                            <textarea type="text" class="form-control" placeholder="Enter Address"></textarea><br>
+                              <label>Address</label>
+                              <textarea type="text" class="form-control" placeholder="Enter Address" name="address"></textarea><br>
+                              <span class="error"><?php echo $paddressErr;?></span>
                     
-                            <label>City</label>
-                            <input type="text" class="form-control" placeholder="Enter City name"><br>
+                              <label>City</label>
+                              <input type="text" class="form-control" placeholder="Enter City name" name="city"><br>
+                              <span class="error"><?php echo $pcityErr;?></span>
             
-                            <label>Country</label>
-                            <input type="text" class="form-control" placeholder="Enter Country name"><br>
+                              <label>Country</label>
+                              <input type="text" class="form-control" placeholder="Enter Country name"name="country"><br>
+                              <span class="error"><?php echo $pcountryErr;?></span>
             
-                            <label>Postal Code</label>
-                            <input type="text" class="form-control" placeholder="Enter Postal_code"><br>
+                              <label>Postal Code</label>
+                              <input type="text" class="form-control" placeholder="Enter Postal_code"name="postal_code"><br>
+                              <span class="error"><?php echo $pcodeErr;?></span>
 
-                            <label>Profile Picture</label>
-                            <input type="file" name="fileToUpload" id="fileToUpload"><br>
+                              <label>Profile Picture</label>
+                              <input type="file" name="fileToUpload" id="fileToUpload"><br>
+                              <span class="error"><?php echo $paddressErr;?></span>
 
-                            <button type="submit" class="btn btn-danger">Submit Profile</button>
+                              <button type="submit" class="btn btn-danger" name="submit_btn" value="submit_btn">Submit Profile</button>
 
+                              </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                              </div>
                             </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div> 
+                          <!-- </form> -->
+                          </div> 
                       <!-- Add profile Modal End -->
                     <?php
                   }else{
@@ -237,10 +248,6 @@ include('../php/profile_data.php');
                   }
                 ?>
 
-          
-
-            
-          
               </form>
             </div>
           </div>        
