@@ -189,7 +189,46 @@ include('../php/profile_data.php');
             
                   if(empty($user_profile_data['profile_picture'])){
                     ?>
-                    <button type="submit" href="#" class="btn btn-success">Add Profile</button>
+                      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Add Profile</button>
+                      <!-- Add profile Modal Start -->
+                      <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
+                        
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">Select</h4>
+                            </div>
+                            <div class="modal-body">
+                              <!-- <button type="submit" href="#" class="btn btn-success">Add Profile</button>
+                              <button type="submit" href="#" class="btn btn-primary">Edit Profile</button> -->
+
+                            <label>Address</label>
+                            <textarea type="text" class="form-control" placeholder="Enter Address"></textarea><br>
+                    
+                            <label>City</label>
+                            <input type="text" class="form-control" placeholder="Enter City name"><br>
+            
+                            <label>Country</label>
+                            <input type="text" class="form-control" placeholder="Enter Country name"><br>
+            
+                            <label>Postal Code</label>
+                            <input type="text" class="form-control" placeholder="Enter Postal_code"><br>
+
+                            <label>Profile Picture</label>
+                            <input type="file" name="fileToUpload" id="fileToUpload"><br>
+
+                            <button type="submit" class="btn btn-danger">Submit Profile</button>
+
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div> 
+                      <!-- Add profile Modal End -->
                     <?php
                   }else{
                     ?>
@@ -198,46 +237,10 @@ include('../php/profile_data.php');
                   }
                 ?>
 
-          <div class="container">
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Add Profile</button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="myModal" role="dialog">
-              <div class="modal-dialog">
-              
-                <!-- Modal content-->
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Select</h4>
-                  </div>
-                  <div class="modal-body">
-                    <!-- <button type="submit" href="#" class="btn btn-success">Add Profile</button>
-                    <button type="submit" href="#" class="btn btn-primary">Edit Profile</button> -->
-
-                  <label>Address</label>
-                  <textarea type="text" class="form-control" placeholder="Enter Address"></textarea><br>
           
-                  <label>City</label>
-                  <input type="text" class="form-control" placeholder="Enter City name"><br>
-  
-                  <label>Country</label>
-                  <input type="text" class="form-control" placeholder="Enter Country name"><br>
-  
-                  <label>Postal_code</label>
-                  <input type="text" class="form-control" placeholder="Enter Postal_code"><br>
 
-                  <label>Profile_picture</label>
-                  <input type="text" class="form-control" placeholder="Add Profile_picture">
-
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
+            
+          
               </form>
             </div>
           </div>        
