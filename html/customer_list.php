@@ -121,7 +121,7 @@
                           <td><?php echo $row['customer_mobilenumber']; ?></td>
                           <td><?php echo $row['customer_email']; ?></td>
                           <td>
-                            <button class="btn btn-success"><a href="update.php?id=<?php echo $row['customer_id']; ?>" class="text-light">Update</a></button>
+                            <button class="btn btn-success"><a href="../php/update.php?id=<?php echo $row['customer_id']; ?>" class="text-light">Update</a></button>
                             <button class="btn btn-danger"><a href="../php/customer_delete.php?deleteid=<?php echo $row['customer_id']; ?>" class="text-light">Delete</a></button>
                           </td>
                         </tr>

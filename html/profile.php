@@ -1,6 +1,6 @@
 <?php
 
-$paddressErr = $pcityErr = $pcountryErr = $pcodeErr = '';
+$paddressErr = $pcityErr = $pcountryErr = $pcodeErr = $pgenderErr = '';
 include('../php/connection.php');
 include('../php/profile_data.php');
 
@@ -171,7 +171,14 @@ include('../php/profile_data.php');
   
                   <div class="form-group">
                     <label>Gender</label>
-                    <p><?php if($user_profile_data['gender'] == 1){echo "Male";}else{ echo "Female";} ?></p>
+                    <p>
+                      <?php 
+                        if($user_profile_data['gender'] == 1)
+                        {echo "Male";}
+                        else
+                        { echo "Female";} 
+                      ?>
+                    </p>
                   </div>
   
                   <div class="form-group">
@@ -209,25 +216,44 @@ include('../php/profile_data.php');
                               
                           <!-- </form method="post"> -->
                             <div class="modal-body">
-                              <label>Address</label>
-                              <textarea type="text" class="form-control" placeholder="Enter Address" name="address"></textarea><br>
-                              <span class="error"><?php echo $paddressErr;?></span>
+                              <div class="form-group">
+                                <label>Address</label>
+                                <textarea type="text" class="form-control" placeholder="Enter Address" name="address"></textarea>
+                                <span class="error"><?php echo $paddressErr;?></span>
+                              </div>
                     
-                              <label>City</label>
-                              <input type="text" class="form-control" placeholder="Enter City name" name="city"><br>
-                              <span class="error"><?php echo $pcityErr;?></span>
+                              <div class="form-group">
+                                <label>City</label>
+                                <input type="text" class="form-control" placeholder="Enter City name" name="city">
+                                <span class="error"><?php echo $pcityErr;?></span>
+                              </div>
             
-                              <label>Country</label>
-                              <input type="text" class="form-control" placeholder="Enter Country name"name="country"><br>
-                              <span class="error"><?php echo $pcountryErr;?></span>
+                              <div class="form-group">
+                                <label>Country</label>
+                                <input type="text" class="form-control" placeholder="Enter Country name"name="country">
+                                <span class="error"><?php echo $pcountryErr;?></span>
+                              </div>
             
-                              <label>Postal Code</label>
-                              <input type="text" class="form-control" placeholder="Enter Postal_code"name="postal_code"><br>
-                              <span class="error"><?php echo $pcodeErr;?></span>
-
-                              <label>Profile Picture</label>
-                              <input type="file" name="fileToUpload" id="fileToUpload"><br>
-                              <span class="error"><?php echo $paddressErr;?></span>
+                              <div class="form-group">
+                                <label>Postal Code</label>
+                                <input type="text" class="form-control" placeholder="Enter Postal_code"name="postal_code">
+                                <span class="error"><?php echo $pcodeErr;?></span>
+                              </div>
+                              
+                              <div class="form-group">
+                                <label>Gender</label><br>
+                                <input type="radio" name="profile_gender" value="1">
+                                <label for="option1">Male</label>
+                                <input type="radio" name="profile_gender" value="0">
+                                <label for="option2">Female</label>
+                                <span class="error"><?php echo $pgenderErr;?></span>
+                              </div>
+                              
+                              <div class="form-group">
+                                <label>Profile Picture</label>
+                                <input type="file" name="fileToUpload" id="fileToUpload">
+                                <span class="error"><?php echo $paddressErr;?></span>
+                              </div>
 
                               <button type="submit" class="btn btn-danger" name="submit_btn" value="submit_btn">Submit Profile</button>
 
