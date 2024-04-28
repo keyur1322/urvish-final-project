@@ -268,7 +268,80 @@ include('../php/profile_data.php');
                     <?php
                   }else{
                     ?>
-                    <button type="submit" href="#" class="btn btn-primary">Edit Profile</button>
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">edit profile</button>
+
+                    <!-- Modal -->
+                    <div id="myModal" class="modal fade" role="dialog">
+                      <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Modal Header</h4>
+                          </div>
+                          <div class="modal-body">
+
+                              <div class="form-group">
+                                <label>First name</label>
+                                <input type="text" class="form-control" placeholder="Enter First name">
+                              </div>
+
+                              <div class="form-group">
+                                <label>Last name</label>
+                                <input type="text" class="form-control" placeholder="Enter Last name">
+                              </div>
+
+                              <div class="form-group">
+                                <label>Email</label>
+                                <input type="text" class="form-control" placeholder="Enter Email">
+                              </div>
+
+                              <div class="form-group">
+                                <label>Date of Birth</label>
+                                <input type="date" class="form-control" placeholder="Enter Date">
+                              </div>
+
+                              <div class="form-group">
+                                <label>Gender</label><br>
+                                <input type="radio" name="profile_gender" value="1">
+                                <label for="option1">Male</label>
+                                <input type="radio" name="profile_gender" value="0">
+                                <label for="option2">Female</label>
+                              </div>
+
+                              <div class="form-group">
+                                <label>Address</label>
+                                <textarea type="text" class="form-control" placeholder="Enter Address" name="address"></textarea>
+                              </div>
+                    
+                              <div class="form-group">
+                                <label>City</label>
+                                <input type="text" class="form-control" placeholder="Enter City name" name="city">
+                              </div>
+            
+                              <div class="form-group">
+                                <label>Country</label>
+                                <input type="text" class="form-control" placeholder="Enter Country name"name="country">
+                              </div>
+            
+                              <div class="form-group">
+                                <label>Postal Code</label>
+                                <input type="text" class="form-control" placeholder="Enter Postal_code"name="postal_code">
+                              </div>
+
+                              <button type="submit" class="btn btn-info" data-dismiss="modal">submit</button>
+
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+
                     <?php
                   }
                 ?>
