@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 
 $user_id = 7;
 
@@ -16,6 +17,12 @@ if(isset($_POST['submit_btn'])){
     $profile_country = $_POST['country'];
     $profile_postal_code = $_POST['postal_code'];
     $profile_gender = $_POST['profile_gender'];
+
+    $target_dir = "../images/admin_profile/";
+    $file_name = $_FILES['fileToUpload']['name'];
+    $file_tmp = $_FILES['fileToUpload']['tmp_name'];
+    
+    move_uploaded_file($file_tmp, $target_dir . $file_name);
 
     // address validation
     if (empty($profile_address)) {
@@ -62,9 +69,8 @@ if(isset($_POST['submit_btn'])){
       }
 
     if($paddressErr == '' & $pcityErr == '' & $pcountryErr == '' & $pcodeErr == ''){
-
       $add_profile_query = "INSERT INTO `tbl_profile`(`user_id`, `gender`, `address`, `city`, `country`, `postal_code`, `profile_picture`) 
-      VALUES ('$user_id', '$profile_gender', '$profile_address','$profile_city','$profile_country','$profile_postal_code', 'profile.png')";
+      VALUES ('$user_id', '$profile_gender', '$profile_address','$profile_city','$profile_country','$profile_postal_code', '$file_name')";
 
        if ($con->query($add_profile_query) === TRUE) {
         header("Location: ../html/profile.php");

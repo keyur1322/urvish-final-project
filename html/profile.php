@@ -145,7 +145,6 @@ include('../php/profile_data.php');
           <div class="col-md-8">
             <div class="card-body">
               <p class="profile-title">Profile Information</p>
-              <form method="post">
                 <div class="col-md-6" style="padding-left: 0 !important;">
                   <div class="form-group">
                     <label for="name">First Name</label>
@@ -212,9 +211,9 @@ include('../php/profile_data.php');
                               <button type="button" class="close" data-dismiss="modal">&times;</button>
                               <h4 class="modal-title">Select</h4>
                             </div>
-                            <form>
+                          
                               
-                          <!-- </form method="post"> -->
+                          <form method="post" enctype="multipart/form-data">
                             <div class="modal-body">
                               <div class="form-group">
                                 <label>Address</label>
@@ -263,7 +262,7 @@ include('../php/profile_data.php');
                                 </div>
                               </div>
                             </div>
-                          <!-- </form> -->
+                          </form>
                           </div> 
                       <!-- Add profile Modal End -->
                     <?php
@@ -273,8 +272,6 @@ include('../php/profile_data.php');
                     <?php
                   }
                 ?>
-
-              </form>
             </div>
           </div>        
         <?php
