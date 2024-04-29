@@ -252,7 +252,7 @@ include('../php/profile_data.php');
                                 <span class="error"><?php echo $paddressErr;?></span>
                               </div>
 
-                              <button type="submit" class="btn btn-danger" name="submit_btn" value="submit_btn">Submit Profile</button>
+                              <button type="submit" class="btn btn-danger" name="add_btn" value="add_btn">Submit Profile</button>
 
                               </div>
                                 <div class="modal-footer">
@@ -327,15 +327,11 @@ include('../php/profile_data.php');
                                     ?>
                                   </div>
                                   <div class="form-group">
-                                    <label>Profile Picture</label>
-                                    <input type="file" name="pfileToUpload" id="pfileToUpload">
-                                  </div>
-                                </div>
-                                <div class="col-md-6">
-                                  <div class="form-group">
                                     <label>Birth Date</label>
                                     <input type="date" class="form-control" value="<?php echo $profile_data['date_of_birth']; ?>" name="pbirthdate">
                                   </div>
+                                </div>
+                                <div class="col-md-6">
                                   <div class="form-group">
                                     <label>Address</label>
                                     <textarea type="text" class="form-control" placeholder="Enter Address" name="paddress"><?php echo $profile_data['address']; ?></textarea>

@@ -10,7 +10,7 @@ $user_profile_data_query = "SELECT * FROM tbl_admin
 $user_profile_data_result = $con->query($user_profile_data_query);
 
 
-if(isset($_POST['submit_btn'])){
+if(isset($_POST['add_btn'])){
 
     $profile_address = $_POST['address'];
     $profile_city = $_POST['city'];
@@ -93,9 +93,11 @@ if(isset($_POST['edit_btn'])){
 
   $profile_update_admin_query = "UPDATE tbl_admin SET firstname='$pfname', lastname='$plname', email='$pemail', date_of_birth='$pbirthdate' WHERE user_id='$user_id'";
   if ($con->query($profile_update_admin_query) === TRUE) {
-    header("Location: ../html/dashboard.php");
-  } else {
-    echo "Error updating record: " . $conn->error;
+    
+    $profile_update_query = "UPDATE tbl_profile SET gender='$pgender', address='$paddress', city='$pcity', country='$pcountry', postal_code='$ppostal_code' WHERE user_id='$user_id'";
+    if ($con->query($profile_update_query) === TRUE) {
+      header("Location: ../html/profile.php");
+    }
   }
 }
 
