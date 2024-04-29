@@ -80,4 +80,23 @@ if(isset($_POST['submit_btn'])){
     }
 }
 
+if(isset($_POST['edit_btn'])){
+  $pfname = $_POST['pfname'];
+  $plname = $_POST['plname'];
+  $pemail = $_POST['pemail'];
+  $pgender = $_POST['pgender'];
+  $pbirthdate = $_POST['pbirthdate'];
+  $paddress = $_POST['paddress'];
+  $pcity = $_POST['pcity'];
+  $pcountry = $_POST['pcountry'];
+  $ppostal_code = $_POST['ppostal_code'];
+
+  $profile_update_admin_query = "UPDATE tbl_admin SET firstname='$pfname', lastname='$plname', email='$pemail', date_of_birth='$pbirthdate' WHERE user_id='$user_id'";
+  if ($con->query($profile_update_admin_query) === TRUE) {
+    header("Location: ../html/dashboard.php");
+  } else {
+    echo "Error updating record: " . $conn->error;
+  }
+}
+
 ?>

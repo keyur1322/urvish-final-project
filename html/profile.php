@@ -200,19 +200,17 @@ include('../php/profile_data.php');
             
                   if(empty($user_profile_data['profile_picture'])){
                     ?>
-                      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Add Profile</button>
+                      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myaddModal">Add Profile</button>
                       <!-- Add profile Modal Start -->
-                      <div class="modal fade" id="myModal" role="dialog">
+                      <div class="modal fade" id="myaddModal" role="dialog">
                         <div class="modal-dialog">
-                        
                           <!-- Modal content-->
                           <div class="modal-content">
                             <div class="modal-header">
                               <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h4 class="modal-title">Select</h4>
+                              <h4 class="modal-title">Add profile</h4>
                             </div>
-                          
-                              
+
                           <form method="post" enctype="multipart/form-data">
                             <div class="modal-body">
                               <div class="form-group">
@@ -268,7 +266,107 @@ include('../php/profile_data.php');
                     <?php
                   }else{
                     ?>
-                    <button type="submit" href="#" class="btn btn-primary">Edit Profile</button>
+                    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myeditModal">Edit Profile</button>
+
+                      <!-- Edit profile Modal Start -->
+                      <div class="modal fade" id="myeditModal" role="dialog">
+                        <div class="modal-dialog">
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">Edit Profile</h4>
+                            </div>
+
+                            <div class="modal-body">
+
+                            <?php
+                              
+                            $edit_profile_query = "SELECT * FROM tbl_profile 
+                                                  LEFT JOIN tbl_admin 
+                                                  ON tbl_profile.user_id = tbl_admin.user_id 
+                                                  WHERE tbl_profile.user_id = '$user_id'";
+                            $edit_profile_query_result = $con->query($edit_profile_query);
+              
+                            if($edit_profile_query_result->num_rows > 0){
+                              while($profile_data = $edit_profile_query_result->fetch_assoc()) {
+                              ?>
+                              <form method="post" enctype="multipart/form-data">
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                    <label>First Name</label>
+                                    <input type="text" class="form-control" value="<?php echo $profile_data['firstname']; ?>" placeholder="Enter first name" name="pfname">
+                                  </div>
+                                  <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input type="text" class="form-control" value="<?php echo $profile_data['lastname']; ?>" placeholder="Enter last name" name="plname">
+                                  </div>
+                                  <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="text" class="form-control" value="<?php echo $profile_data['email']; ?>" placeholder="Enter email address" name="pemail">
+                                  </div>
+                                  <div class="form-group">
+                                    <label>Gender</label><br>
+                                    <?php
+                                    
+                                    if($profile_data['gender'] == 1){
+                                    ?>
+                                      <input type="radio" checked="checked" name="pgender" value="1">
+                                      <label for="option1">Male</label>
+                                      <input type="radio" name="pgender" value="0">
+                                      <label for="option2">Female</label>  
+                                    <?php
+                                    }else{
+                                    ?>
+                                      <input type="radio" name="pgender" value="1">
+                                      <label for="option1">Male</label>
+                                      <input type="radio" checked="checked" name="pgender" value="0">
+                                      <label for="option2">Female</label>
+                                    <?php
+                                    }
+                                    ?>
+                                  </div>
+                                  <div class="form-group">
+                                    <label>Profile Picture</label>
+                                    <input type="file" name="pfileToUpload" id="pfileToUpload">
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                    <label>Birth Date</label>
+                                    <input type="date" class="form-control" value="<?php echo $profile_data['date_of_birth']; ?>" name="pbirthdate">
+                                  </div>
+                                  <div class="form-group">
+                                    <label>Address</label>
+                                    <textarea type="text" class="form-control" placeholder="Enter Address" name="paddress"><?php echo $profile_data['address']; ?></textarea>
+                                  </div>
+                                  <div class="form-group">
+                                    <label>City</label>
+                                    <input type="text" class="form-control" value="<?php echo $profile_data['city']; ?>" placeholder="Enter City name" name="pcity">
+                                  </div>
+                                  <div class="form-group">
+                                    <label>Country</label>
+                                    <input type="text" class="form-control" value="<?php echo $profile_data['country']; ?>" placeholder="Enter Country name"name="pcountry">
+                                  </div>
+                                  <div class="form-group">
+                                    <label>Postal Code</label>
+                                    <input type="text" class="form-control" value="<?php echo $profile_data['postal_code']; ?>" placeholder="Enter Postal_code"name="ppostal_code">
+                                  </div>
+                                  <button type="submit" class="btn btn-danger" name="edit_btn" value="edit_btn">Edit Profile</button>
+                                </div>
+                              </form>
+                              <?php
+                              }
+                            }
+                          ?>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div> 
+                      <!-- Edit profile Modal End -->
                     <?php
                   }
                 ?>
