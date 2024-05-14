@@ -157,7 +157,7 @@ include('../php/update.php');
               <input type="text" class="form-control" value="<?php echo $get_customer['customer_email']; ?>" id="email" placeholder="enter email" name="customer_email">
               <span class="error"><?php echo $cemailErr;?></span>
             </div>
-            <button type="submit" class="btn btn-primary" name="update_btn" value="update_btn">Update</button>
+            <button type="submit" class="btn btn-success" name="update_btn" value="update_btn">Update</button>
         </form>
         <?php
         }
