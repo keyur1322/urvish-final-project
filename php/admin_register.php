@@ -81,16 +81,7 @@ if(isset($_POST['admin_reg_btn']))
     VALUES ('$afname', '$alname', '$aemail', '$apassword', '$adob')";
 
       if ($con->query($admin_register_query) === TRUE) {
-
-
-        ?>
-          <script type="text/javascript">
-            alert("New record created successfully")
-          </script>
-        <?php
-
-        // echo "New record created successfully";
-        // header("Location: ../html/index.php");
+        header("Location: ../html/index.php");
        } else {
         echo "Error: " . $admin_register_query . "<br>" . $con->error;
     }

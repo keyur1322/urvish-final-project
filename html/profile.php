@@ -171,11 +171,16 @@ include('../php/profile_data.php');
                   <div class="form-group">
                     <label>Gender</label>
                     <p>
-                      <?php 
+                      <?php
+                      if(!empty($user_profile_data['gender'])) {
                         if($user_profile_data['gender'] == 1)
                         {echo "Male";}
                         else
                         { echo "Female";} 
+                      }
+                      else{
+                        echo "N/A";
+                      }
                       ?>
                     </p>
                   </div>
