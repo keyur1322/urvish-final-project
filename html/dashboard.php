@@ -23,10 +23,10 @@ include('../php/dashboard_data.php');
   .card {
     background-image: linear-gradient(to right, #434343 0%, black 100%);
     color: white;
-    padding: 2%;
+    padding: 1%;
     border-radius: 10px;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    margin-bottom: 2%;
+    margin-bottom: 1%;
   }
 
   .card_title{

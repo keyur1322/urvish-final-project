@@ -113,18 +113,15 @@ include('../php/invoice_add.php');
       <div class="well">
         <h4>Add Invoice</h4>
       </div>
-      
-      <div class="main-form">
-        <div class="col-md-8 invoice-form">
 
+      <form method="post">
+        <div class="col-md-6">
           <?php
 
           $get_all_company_data = 'SELECT * FROM tbl_customer';
           $get_all_company_data_result = $con->query($get_all_company_data);
 
           ?>
-
-          <form method="post">
             <div class="form-group">
               <label>Customer Company</label><br>
               <select class="form-select" name="companies">
@@ -159,33 +156,32 @@ include('../php/invoice_add.php');
               <textarea type="text" class="form-control" placeholder="Enter invoice description" name="invoice_description"></textarea>
               <span class="error"><?php echo $idescriptionErr;?></span>
             </div>
-
-            <div class="form-group">
-              <label>Invoice tax</label>
-              <input type="text" class="form-control" placeholder="Enter invoice tax" name="invoice_tax">
-              <span class="error"><?php echo $itaxErr;?></span>
-            </div>
-
-            <div class="form-group">
-                <label>Invoice status</label><br>
-                <input type="radio" name="invoice_status" value="paid">
-                <label for="option1">Paid</label>
-                <input type="radio" name="invoice_status" value="pending">
-                <label for="option2">Pending</label><br>
-                <span class="error"><?php echo $istatustErr;?></span>
-            </div>
-
-            <div class="form-group">
-                <label>Invoice amount</label>
-                <input type="text" class="form-control" placeholder="Enter invoice amount" name="invoice_amount">
-                <span class="error"><?php echo $iamountErr;?></span>
-            </div>
-
-            <button type="submit" class="btn btn-primary" value="inv_submit" name="inv_submit">Add Invoices</button>
-          </form>
         </div>
-      </div>
-      
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Invoice tax</label>
+            <input type="text" class="form-control" placeholder="Enter invoice tax" name="invoice_tax">
+            <span class="error"><?php echo $itaxErr;?></span>
+          </div>
+
+          <div class="form-group">
+              <label>Invoice status</label><br>
+              <input type="radio" name="invoice_status" value="paid">
+              <label for="option1">Paid</label>
+              <input type="radio" name="invoice_status" value="pending">
+              <label for="option2">Pending</label><br>
+              <span class="error"><?php echo $istatustErr;?></span>
+          </div>
+
+          <div class="form-group">
+              <label>Invoice amount</label>
+              <input type="text" class="form-control" placeholder="Enter invoice amount" name="invoice_amount">
+              <span class="error"><?php echo $iamountErr;?></span>
+          </div>
+
+          <button type="submit" class="btn btn-primary" value="inv_submit" name="inv_submit">Add Invoices</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
