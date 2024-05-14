@@ -203,7 +203,7 @@ include('../php/profile_data.php');
                 </div>
                 <?php
             
-                  if(empty($user_profile_data['profile_picture'])){
+                  if(empty($user_profile_data['profile_picture']) && empty($user_profile_data['gender']) && empty($user_profile_data['address']) && empty($user_profile_data['city']) && empty($user_profile_data['country']) && empty($user_profile_data['postal_code'])){
                     ?>
                       <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myaddModal">Add Profile</button>
                       <!-- Add profile Modal Start -->

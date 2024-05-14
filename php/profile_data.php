@@ -1,7 +1,7 @@
 <?php
 error_reporting(0);
 
-$user_id = 15;
+$user_id = 1;
 
 $user_profile_data_query = "SELECT * FROM tbl_admin 
                             LEFT JOIN tbl_profile 
